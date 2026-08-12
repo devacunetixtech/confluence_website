@@ -15,18 +15,18 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Confluence 2026",
+  title: "Confluence 2.0",
   description:
-    "The flagship tech conference uniting students, developers, and industry leaders at the intersection of blockchain, Web3, and emerging technologies.",
+    "The Largest Student Web3 Conference in Southwestern Nigeria. Powered by Blockchain LAUTECH—a Tier-1 University Blockchain Club in Africa.",
   icons: {
     icon: "/con-img (1).jpg",
   },
   openGraph: {
-    title: "Confluence 2026",
+    title: "Confluence 2.0",
     description:
-      "The flagship tech conference uniting students, developers, and industry leaders at the intersection of blockchain, Web3, and emerging technologies.",
-    url: "https://blockchainlautech.club",
-    siteName: "Confluence 2026",
+      "The Largest Student Web3 Conference in Southwestern Nigeria. Powered by Blockchain LAUTECH—a Tier-1 University Blockchain Club in Africa.",
+    url: "https://confluence.blockchainlautech.club/",
+    siteName: "Confluence 2.0",
     images: [
       {
         url: "/con-img (1).jpg",
@@ -40,9 +40,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Confluence 2026",
+    title: "Confluence 2.0",
     description:
-      "The flagship tech conference uniting students, developers, and industry leaders at the intersection of blockchain, Web3, and emerging technologies.",
+      "The Largest Student Web3 Conference in Southwestern Nigeria. Powered by Blockchain LAUTECH—a Tier-1 University Blockchain Club in Africa.",
     images: ["/con-img (1).jpg"],
   },
 };

@@ -25,12 +25,12 @@ const CountdownTimer: React.FC = () => {
 
   const [eventStarted, setEventStarted] = useState<boolean>(false);
 
-  const targetDate: string = '2025-11-07T00:00:00';
+  const targetDate: string = '2026-09-21T09:00:00';
 
   const startedRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const interval: NodeJS.Timeout = setInterval(() => {
+    const interval = setInterval(() => {
       const now = new Date().getTime();
       const target = new Date(targetDate).getTime();
       const difference = target - now;
@@ -52,7 +52,7 @@ const CountdownTimer: React.FC = () => {
     return () => clearInterval(interval);
   }, [targetDate]);
 
-  // Confetti observer
+  // Confetti observer when event starts
   useEffect(() => {
     if (!eventStarted) return;
 
@@ -89,37 +89,39 @@ const CountdownTimer: React.FC = () => {
   ];
 
   return (
-    <div className="max-sm:-mt-15 relative z-30 flex items-center justify-center p-4 px-20 max-sm:px-5">
-      <div className="bg-conblue rounded-3xl lg:p-8 p-4 shadow-2xl border border-white/20 max-w-4xl w-full">
-
+    <div className="relative z-30 flex items-center justify-center p-4 px-6 md:px-20">
+      <div className="bg-black/60 rounded-3xl p-6 sm:p-8 shadow-2xl border border-white/10 max-w-4xl w-full neo-shadow-blue">
+        
         {eventStarted ? (
-          <div ref={startedRef} className="text-center">
-            <div className="bg-white/15 backdrop-blur-sm rounded-3xl lg:p-8 p-4 shadow-lg border border-white/20 hover:bg-white/20 transition-all duration-300">
-              <div className="text-2xl text-center md:text-5xl font-bold text-white mb-4">
-                Thank you for being a part of Confluence! <br />
+          <div ref={startedRef} className="text-center py-6">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/10 transition-all duration-300">
+              <div className="text-xl md:text-3xl font-black text-white mb-3 uppercase tracking-tight">
+                Confluence 2.0 has commenced!
               </div>
-              <p className="text-white">
-                We hope you had an amazing experience filled with learning, networking, and inspiration. Looking forward to seeing you at the next one.
-              </p>
-              <p className="text-white">
-                View Moments: https://blockchainlautech.pixieset.com/confluence25
+              <p className="text-slate-300 text-sm max-w-lg mx-auto">
+                Welcome to the digital beginning of the Confluence experience. Immerse yourself in our track sessions, network with founders, and build the future.
               </p>
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-4 md:grid-cols-4 md:gap-4 gap-2">
-            {timeUnits.map((unit: TimeUnit, index: number) => (
-              <div key={index} className="text-center">
-                <div className="bg-white/15 backdrop-blur-sm rounded-3xl max-sm:rounded-xl md:p-6 p-3 shadow-lg border border-white/20 hover:bg-white/20 transition-all duration-300">
-                  <div className="text-xl md:text-5xl font-bold text-white mb-2 font-mono">
-                    {unit.value.toString().padStart(2, '0')}
-                  </div>
-                  <div className="text-white/80 text-[9px] md:text-base font-medium uppercase lg:tracking-wide">
-                    {unit.label}
+          <div>
+            <p className="text-center text-slate-400 text-xs font-bold uppercase tracking-widest mb-4">
+              Event Countdown
+            </p>
+            <div className="grid grid-cols-4 gap-3 sm:gap-6">
+              {timeUnits.map((unit: TimeUnit, index: number) => (
+                <div key={index} className="text-center">
+                  <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg border border-white/10 hover:bg-white/10 hover:scale-[1.02] transition-all duration-300">
+                    <div className="text-2xl sm:text-5xl font-black text-white mb-1.5 font-mono tracking-tight">
+                      {unit.value.toString().padStart(2, '0')}
+                    </div>
+                    <div className="text-slate-400 text-[9px] sm:text-xs font-bold uppercase tracking-wider">
+                      {unit.label}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         )}
 

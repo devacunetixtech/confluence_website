@@ -502,7 +502,14 @@ class App {
     this.renderer = new Renderer({ alpha: true, antialias: true, dpr: Math.min(window.devicePixelRatio || 1, 2) });
     this.gl = this.renderer.gl;
     this.gl.clearColor(0, 0, 0, 0);
-    this.container.appendChild(this.renderer.gl.canvas as HTMLCanvasElement);
+    const canvas = this.renderer.gl.canvas as HTMLCanvasElement;
+    canvas.style.display = 'block';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    this.container.appendChild(canvas);
   }
 
   createCamera() {
@@ -613,12 +620,12 @@ class App {
     this.boundOnTouchMove = this.onTouchMove.bind(this);
     this.boundOnTouchUp = this.onTouchUp.bind(this);
     window.addEventListener("resize", this.boundOnResize);
-    window.addEventListener("mousewheel", this.boundOnWheel);
-    window.addEventListener("wheel", this.boundOnWheel);
-    window.addEventListener("mousedown", this.boundOnTouchDown);
+    this.container.addEventListener("mousewheel", this.boundOnWheel);
+    this.container.addEventListener("wheel", this.boundOnWheel);
+    this.container.addEventListener("mousedown", this.boundOnTouchDown);
     window.addEventListener("mousemove", this.boundOnTouchMove);
     window.addEventListener("mouseup", this.boundOnTouchUp);
-    window.addEventListener("touchstart", this.boundOnTouchDown);
+    this.container.addEventListener("touchstart", this.boundOnTouchDown);
     window.addEventListener("touchmove", this.boundOnTouchMove);
     window.addEventListener("touchend", this.boundOnTouchUp);
   }
@@ -630,12 +637,14 @@ class App {
       this.raf = 0;
     }
     window.removeEventListener("resize", this.boundOnResize);
-    window.removeEventListener("mousewheel", this.boundOnWheel);
-    window.removeEventListener("wheel", this.boundOnWheel);
-    window.removeEventListener("mousedown", this.boundOnTouchDown);
+    if (this.container) {
+      this.container.removeEventListener("mousewheel", this.boundOnWheel);
+      this.container.removeEventListener("wheel", this.boundOnWheel);
+      this.container.removeEventListener("mousedown", this.boundOnTouchDown);
+      this.container.removeEventListener("touchstart", this.boundOnTouchDown);
+    }
     window.removeEventListener("mousemove", this.boundOnTouchMove);
     window.removeEventListener("mouseup", this.boundOnTouchUp);
-    window.removeEventListener("touchstart", this.boundOnTouchDown);
     window.removeEventListener("touchmove", this.boundOnTouchMove);
     window.removeEventListener("touchend", this.boundOnTouchUp);
     if (this.renderer?.gl?.canvas.parentNode) {

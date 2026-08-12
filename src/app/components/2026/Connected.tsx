@@ -1,44 +1,62 @@
-import { MailQuestionMark, ExternalLink } from 'lucide-react'
-import React from 'react'
+'use client'
+
+import { ExternalLink } from 'lucide-react'
 
 const Connected = () => {
   return (
-    <section id='contact' className='pt-8 md:pt-12 px-5 md:px-20 relative z-10'>
-      <div data-aos="fade-up" className="flex flex-col items-center">
-        <h2 className='text-[#286cfd] font-bold text-sm md:text-base tracking-widest uppercase text-center mb-4'>
-          Stay Connected
-        </h2>
-        <h1 className='font-black lg:text-5xl md:text-4xl text-[clamp(16px,6vw,36px)] sm:text-4xl text-[#0C1246] text-center tracking-tight uppercase leading-tight mb-4 whitespace-nowrap'>
-          Follow our journey to <br /> 
-          <span className="text-[#286cfd]">Confluence 2026</span>
-        </h1>
+    <section id='contact' className='pt-8 pb-8 px-6 md:px-20 max-w-8xl mx-auto relative z-10'>
+      
+      {/* Badge */}
+      <div className="flex justify-center mb-6" data-aos="fade-up">
+        <div className="text-xs sm:text-sm font-bold bg-white/5 py-2 px-6 rounded-full w-fit text-nowrap shadow border border-white/10">
+          <h2 className="text-gradient uppercase tracking-wider">Stay Connected</h2>
+        </div>
       </div>
 
-
-      <div className="flex gap-10 mt-2 mb-6 flex-col lg:flex-row lg:items-stretch">
-        <div className="basis-1/2" data-aos="fade-right">
-          <h2 className='text-[clamp(22px,6vw,30px)] md:text-4xl font-bold text-[#0C1246] max-sm:text-center tracking-tight whitespace-nowrap'>About Blockchain Lautech</h2>
-          <p className='text-slate-600 mt-4 text-lg leading-relaxed text-justify md:text-left'>
-            Blockchain Lautech has been championing blockchain education since 2020. Through workshops, hackathons, and community building, we&apos;ve created a vibrant ecosystem that connects LAUTECH students to the global Web3 movement.
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        {/* Left Column */}
+        <div className="lg:col-span-7 space-y-6" data-aos="fade-right">
+          <h4 className="text-2xl sm:text-3xl font-black text-[#ccff00] uppercase tracking-tight">
+            Code. Create. Connect.
+          </h4>
+          <p className="text-slate-350 text-base sm:text-lg leading-relaxed text-justify md:text-left">
+            More than a conference, Confluence is the heartbeat of Blockchain Club LAUTECH (BCL). We are building a borderless community of university builders, connecting local talent to the global Web3 ecosystem. Explore our hub, view our open-source repositories, and join the network shaping the future of African technology.
           </p>
         </div>
-        <div className="basis-1/2 h-full flex flex-col justify-center" data-aos="fade-left" data-aos-delay="200">
-          <div className='bg-white/80 backdrop-blur-sm shadow-sm rounded-3xl p-4 border border-slate-100 border-l-4 border-l-[#286cfd] font-medium hover:-translate-y-1 transition-transform'>
-            <h3 className="text-md leading-relaxed text-[#0C1246] font-semibold">Our Mission: To democratize blockchain education and foster innovation from Nigeria to the world.</h3>
+
+        {/* Right Column */}
+        <div className="lg:col-span-5 space-y-6" data-aos="fade-left" data-aos-delay="200">
+          
+          {/* About BCL Card */}
+          <div className="bg-black/40 border border-white/10 shadow-2xl rounded-3xl p-6 border-l-4 border-l-[#facc15] hover:border-white/20 transition-all">
+            <h4 className="text-xs uppercase font-black tracking-widest text-[#facc15] mb-1">About BCL</h4>
+            <p className="text-slate-200 font-bold text-sm sm:text-base leading-snug">
+              BCL has been championing developer education, blockchain technology, and technical innovation since 2020. Connecting Nigerian talent to the global Web3 movement.
+            </p>
           </div>
 
-          <a href="https://blockchainlautech.club" rel='noreferrer' target='_blank' className="mt-6">
-            <button className='bg-[#286cfd] hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30 text-white px-8 py-4 rounded-2xl md:text-lg text-base font-medium cursor-pointer w-full flex items-center justify-center gap-3'>
-              Learn More About Us <ExternalLink className="w-5 h-5" />
+          {/* Mission Card */}
+          <div className="bg-black/40 border border-white/10 shadow-2xl rounded-3xl p-6 border-l-4 border-l-[#286cfd] hover:border-white/20 transition-all">
+            <h4 className="text-xs uppercase font-black tracking-widest text-[#286cfd] mb-1">Our Mission</h4>
+            <p className="text-slate-200 font-bold text-sm sm:text-base leading-snug">
+              To democratize technology education, nurture ambitious builders, and foster purposeful innovation from Nigeria to the world.
+            </p>
+          </div>
+
+          <a 
+            href="https://blockchainlautech.club" 
+            rel="noreferrer" 
+            target="_blank" 
+            className="block"
+          >
+            <button className="bg-[#ccff00] hover:bg-[#b5e000] text-black py-4 px-8 rounded-full text-sm sm:text-base font-black uppercase tracking-wider cursor-pointer w-full flex items-center justify-center gap-3 border border-black neo-shadow-blue">
+              Visit BCL Hub <ExternalLink className="w-5 h-5" />
             </button>
           </a>
 
-          {/* Reserved for Contact Cards
-          <div className="flex flex-col gap-5 h-full mt-8">
-            ...
-          </div>
-          */}
         </div>
+
       </div>
 
     </section>

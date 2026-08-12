@@ -1,106 +1,194 @@
 'use client'
 
-import React from 'react'
-import { MapPin, Calendar, Users, Mic, Layers, Clock } from 'lucide-react'
+import React, { useState } from 'react'
+import { MapPin, Calendar, ArrowDown, ArrowUpRight } from 'lucide-react'
 import Navbar from './Navbar'
+import CountdownTimer from './CountdownTimer'
 
 const Home = () => {
+  const [activePillar, setActivePillar] = useState<'code' | 'create' | 'connect' | null>(null);
+  const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
+  // Map active pillar to styling tokens
+  const themeDetails = {
+    code: {
+      color: 'text-[#286cfd]',
+      bgGlow: 'bg-[#286cfd]/10',
+      description: 'Developers, founders, hackers, engineers, and protocol architects constructing open-source protocols, smart contracts, and Web3 infrastructure from the ground up. Features technical workshops, developer bootcamps, and 24-hour hackathon sprints.',
+      badge: 'CODE'
+    },
+    create: {
+      color: 'text-[#ccff00]',
+      bgGlow: 'bg-[#ccff00]/10',
+      description: 'Founders, artists, entrepreneurs, thinkers, and product designers turning ambitious ideas into viable companies, art, media, and digital products. Includes "Create with Purpose" and a dedicated founders track.',
+      badge: 'CREATE'
+    },
+    connect: {
+      color: 'text-[#facc15]',
+      bgGlow: 'bg-[#facc15]/10',
+      description: 'Capturing the human side of technology, replacing transactional panel noise with raw human stories, networking, and bonding. Includes "The Human Layer" phone-free sessions, novelty sports, and gaming.',
+      badge: 'CONNECT'
+    }
+  };
+
+  const currentTheme = activePillar ? themeDetails[activePillar] : null;
+
   return (
-    <section id='home'>
-      <div>
-        <Navbar />
-        <div className='flex flex-col justify-center items-center gap-7 md:pt-26 pt-14 max-sm:px-5 px-20 relative z-10'>
-          
-          <div data-aos="fade-up" className="flex flex-col items-center mt-8 md:mt-0">
-            <h2 className='text-[#286cfd] font-bold text-[clamp(10px,3vw,16px)] sm:text-sm md:text-base tracking-normal sm:tracking-[0.05em] md:tracking-widest uppercase text-center mb-4 whitespace-nowrap'>
-              The biggest Blockchain extravaganza in Oyo State
-            </h2>
-            <h1 className='font-black lg:text-8xl md:text-7xl sm:text-5xl text-[clamp(32px,11vw,48px)] text-[#0C1246] text-center tracking-tight uppercase leading-none mb-2 whitespace-nowrap'>
-              CONFLUENCE
-              <span className="text-[#286cfd]"> 2.0</span>
-            </h1>
-          </div>
+    <section id='home' className="relative w-full overflow-hidden transition-colors duration-500 pb-6 bg-[#0a0a0a]">
+      <Navbar isRegisterOpen={isRegisterOpen} setIsRegisterOpen={setIsRegisterOpen} />
+      
+      {/* Background gradients that transition based on active pillar */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-8xl h-[800px] pointer-events-none z-0">
+        <div className={`absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl transition-all duration-700 ease-out ${
+          activePillar === 'code' ? 'bg-blue-600/10 scale-125' : 
+          activePillar === 'create' ? 'bg-lime-500/10 scale-125' : 
+          activePillar === 'connect' ? 'bg-yellow-600/10 scale-125' : 
+          'bg-blue-600/5'
+        }`} />
+        <div className={`absolute top-40 right-10 w-[500px] h-[500px] rounded-full blur-3xl transition-all duration-700 ease-out ${
+          activePillar === 'code' ? 'bg-indigo-600/10 scale-125' : 
+          activePillar === 'create' ? 'bg-emerald-500/10 scale-125' : 
+          activePillar === 'connect' ? 'bg-amber-600/10 scale-125' : 
+          'bg-indigo-600/5'
+        }`} />
+      </div>
 
-          {/* <div className="mb-6">
-            <p className='uppercase text-center font-semibold text-xl pb-2 text-slate-500 tracking-wider' data-aos="fade-up" data-aos-delay="100">Theme:</p>
-            <h2 className='font-extrabold lg:text-5xl text-3xl text-gradient text-center tracking-wide uppercase' data-aos="fade-up" data-aos-delay="100">
-             NEXT EVOLUTION
-            </h2>
-          </div>
-
-          <p className='font-normal lg:text-lg text-center text-slate-600 max-w-2xl mx-auto mb-4' data-aos="fade-up" data-aos-delay="150">
-            The next chapter of Ogbomoso's digital transformation is in the works. 
-            <br className='hidden lg:block' /> 
-            Get ready for a bigger and better Web3 experience.
-          </p> */}
-
-          {/* Date and Venue - Compact Inline Pill */}
-          <div className="flex flex-row items-center justify-center gap-2 sm:gap-6 bg-white/90 backdrop-blur-sm px-4 sm:px-8 py-3 rounded-full shadow-sm border border-slate-100 mt-4 mx-auto w-fit" data-aos="fade-up" data-aos-delay="200">
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              <Calendar className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#286cfd]" />
-              <span className="font-semibold text-[11px] sm:text-base text-[#0C1246] whitespace-nowrap">September, 2026</span>
-            </div>
-            
-            <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-slate-300"></div>
-            
-            <div className="flex items-center gap-1.5 sm:gap-2">
-              <MapPin className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-[#286cfd]" />
-              <span className="font-semibold text-[11px] sm:text-base text-[#0C1246] whitespace-nowrap">TBA - Ogbomoso, Nigeria</span>
-            </div>
-          </div>
-
-          {/* Stats Grid */}
-          {/* Stats Grid */}
-          <div className="flex flex-row flex-wrap justify-center items-center gap-6 sm:gap-10 md:gap-16 mt-2 md:mt-4 mb-2 py-1 mx-auto" data-aos="fade-up" data-aos-delay="600">
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-3xl sm:text-4xl md:text-6xl font-medium text-[#0C1246] mb-1 tracking-tight">800<span className="text-[#286cfd]">+</span></h3>
-              <p className="text-slate-500 font-medium text-[10px] sm:text-sm md:text-base leading-snug">Expected Attendees</p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-3xl sm:text-4xl md:text-6xl font-medium text-[#0C1246] mb-1 tracking-tight">20<span className="text-[#286cfd]">+</span></h3>
-              <p className="text-slate-500 font-medium text-[10px] sm:text-sm md:text-base leading-snug">Speakers</p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-3xl sm:text-4xl md:text-6xl font-medium text-[#0C1246] mb-1 tracking-tight">3</h3>
-              <p className="text-slate-500 font-medium text-[10px] sm:text-sm md:text-base leading-snug">Tracks</p>
-            </div>
-
-            <div className="flex flex-col items-center text-center">
-              <h3 className="text-3xl sm:text-4xl md:text-6xl font-medium text-[#0C1246] mb-1 tracking-tight">3<span className="text-[#286cfd]">+</span></h3>
-              <p className="text-slate-500 font-medium text-[10px] sm:text-sm md:text-base leading-snug">Days</p>
-            </div>
-          </div>
-
-                    {/* Buttons */}
-          <div className='flex gap-5' data-aos="fade-up" data-aos-delay="400">
-             <a 
-                href="/pitch-deck2026.pdf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/pitch-deck2026.pdf';
-                  link.download = 'Pitch_Deck2026.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-             >  
-                <button className='bg-[#286cfd] hover:bg-blue-700 transition-colors shadow-lg shadow-blue-500/30 text-white px-5 py-4 rounded-xl md:text-lg text-base font-medium cursor-pointer'>
-                  Pitch Deck
-                </button>
-             </a>
-             <a href="mailto:blockchainlautech@gmail.com">  
-                <button className='bg-[#0C1246] hover:bg-slate-800 transition-colors shadow-lg text-white px-5 py-4 rounded-xl md:text-lg text-base font-medium cursor-pointer'>
-                  Contact Us
-                </button>
-             </a>
-            
-          </div>
-
+      <div className='flex flex-col justify-center items-center gap-8 md:pt-26 pt-28 max-sm:px-5 px-6 lg:px-20 relative z-10 max-w-7xl mx-auto'>
+        
+        {/* Sub-header badge */}
+        <div data-aos="fade-up" className="inline-flex items-center gap-2 bg-white/5 border border-white/10 shadow-sm px-4.5 py-2 rounded-full hover:shadow-md transition-shadow">
+          <span className={`w-2.5 h-2.5 rounded-full transition-colors duration-500 ${
+            activePillar === 'code' ? 'bg-[#286cfd] animate-pulse' : 
+            activePillar === 'create' ? 'bg-[#ccff00] animate-pulse' : 
+            activePillar === 'connect' ? 'bg-[#facc15] animate-pulse' : 
+            'bg-[#286cfd] animate-pulse'
+          }`}></span>
+          <span className="text-white font-extrabold text-xs uppercase tracking-widest">
+            BLOCKCHAIN CLUB LAUTECH PRESENTS
+          </span>
         </div>
+
+        {/* Evolved Hero Typography System */}
+        <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center text-center">
+          
+          {/* Main Headline */}
+          <h1 className='font-black lg:text-[7.5rem] md:text-8xl sm:text-6xl text-[clamp(2.5rem,9vw,4.5rem)] text-white tracking-tighter uppercase leading-[0.85] mb-6 select-none'>
+            <span 
+              onMouseEnter={() => setActivePillar('code')}
+              onMouseLeave={() => setActivePillar(null)}
+              className={`transition-all duration-300 cursor-pointer inline-block hover:scale-[1.02] ${
+                activePillar === 'code' ? 'text-[#286cfd]' : activePillar ? 'opacity-30' : ''
+              }`}
+            >
+              CODE.
+            </span>
+            <span className="mx-2 sm:mx-4 opacity-10">/</span>
+            <span 
+              onMouseEnter={() => setActivePillar('create')}
+              onMouseLeave={() => setActivePillar(null)}
+              className={`transition-all duration-300 cursor-pointer inline-block hover:scale-[1.02] ${
+                activePillar === 'create' ? 'text-[#ccff00]' : activePillar ? 'opacity-30' : ''
+              }`}
+            >
+              CREATE.
+            </span>
+            <span className="mx-2 sm:mx-4 opacity-10">/</span>
+            <span 
+              onMouseEnter={() => setActivePillar('connect')}
+              onMouseLeave={() => setActivePillar(null)}
+              className={`transition-all duration-300 cursor-pointer inline-block hover:scale-[1.02] ${
+                activePillar === 'connect' ? 'text-[#facc15]' : activePillar ? 'opacity-30' : ''
+              }`}
+            >
+              CONNECT.
+            </span>
+          </h1>
+
+          {/* Dynamic Supporting Copy */}
+          <div className="h-28 max-w-3xl flex items-center justify-center">
+            {currentTheme ? (
+              <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 text-center">
+                <span className={`inline-block font-black text-xs tracking-widest px-3 py-1 rounded-full uppercase mb-2 ${
+                  activePillar === 'code' ? 'bg-blue-950/40 text-[#286cfd] border border-blue-900/40' : 
+                  activePillar === 'create' ? 'bg-lime-950/40 text-[#ccff00] border border-lime-800/40' : 
+                  'bg-yellow-950/40 text-[#facc15] border border-yellow-800/40'
+                }`}>
+                  {currentTheme.badge} EXPERIENCE
+                </span>
+                <p className="text-slate-300 font-bold text-sm sm:text-base leading-relaxed">
+                  {currentTheme.description}
+                </p>
+              </div>
+            ) : (
+              <p className="text-slate-300 font-semibold text-sm sm:text-lg md:text-xl leading-relaxed max-w-3xl">
+                Evolving the digital landscape of Ogbomoso through an immersive gathering of builders, founders, creators, and leaders. Join 1,000+ attendees at the largest student Web3 conference in Southwestern Nigeria.
+              </p>
+            )}
+          </div>
+        </div>
+
+        {/* Main CTA & Info Pill */}
+        <div data-aos="fade-up" data-aos-delay="200" className='flex flex-col items-center gap-6 w-full mt-4 relative z-20'>
+          
+          {/* Date & Venue Pill */}
+          <div className="bg-black/90 border border-white/15 shadow-2xl rounded-full py-4 px-8 flex items-center justify-center gap-3 sm:gap-6 w-full max-w-[340px] sm:w-fit sm:max-w-none">
+            <div className="flex items-center gap-2">
+              <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#ccff00] flex-shrink-0" />
+              <span className="font-extrabold text-[10px] sm:text-sm text-slate-100 uppercase tracking-wider whitespace-nowrap">
+                September 21–26, 2026
+              </span>
+            </div>
+            
+            <div className="w-1.5 h-1.5 rounded-full bg-[#286cfd] flex-shrink-0"></div>
+            
+            <div className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#ccff00] flex-shrink-0" />
+              <span className="font-extrabold text-[10px] sm:text-sm text-slate-100 uppercase tracking-wider whitespace-nowrap">
+                Ogbomoso, Nigeria
+              </span>
+            </div>
+          </div>
+
+          {/* Hero Actions */}
+          <div className='flex flex-row gap-4 items-center justify-center mb-2 w-full max-w-[326px] sm:max-w-none'>
+            <button 
+              onClick={() => setIsRegisterOpen(true)}
+              className="flex items-center justify-center gap-2 bg-[#ccff00] hover:bg-[#b5e000] text-black hover:scale-[1.02] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-blue border border-black"
+            >
+              Register <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            </button>
+            
+            <a 
+              href="#schedule" 
+              className="flex items-center justify-center gap-2 bg-[#286cfd] hover:bg-blue-700 text-white hover:scale-[1.02] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-yellow border border-black"
+            >
+              Explore Schedule <ArrowDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-bounce" />
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      {/* WebGL Carousel Showcase */}
+      {/* <div 
+        style={{ height: '620px', position: 'relative' }} 
+        className='-mt-10 max-sm:-mt-20 overflow-hidden select-none' 
+        data-aos="fade-up" 
+        data-aos-delay="500"
+      >
+        <CircularGallery 
+          bend={bend} 
+          textColor="#0C1246" 
+          borderRadius={0.05} 
+          scrollEase={0.03} 
+          autoScrollSpeed={0.12}
+          items={galleryItems}
+        />
+      </div> */}
+
+      {/* Countdown Timer */}
+      <div className="w-full mt-4 relative z-20">
+        <CountdownTimer />
       </div>
     </section>
   )

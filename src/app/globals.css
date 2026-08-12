@@ -1,28 +1,63 @@
 @import "tailwindcss";
 @import "aos/dist/aos.css";
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
 
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #000000;
+  color: #ffffff;
+}
 
 :root {
   font-family: var(--font-inter), sans-serif;
+  --color-lemon: #ccff00;
+  --color-blue: #286cfd;
+  --color-yellow: #facc15;
+  --color-green: #10b981;
 }
 
 code {
   font-family: var(--font-geist-mono), monospace;
 }
 
-.text-gradient {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+/* Light 2D structural grid overlay */
+.bg-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
-.bg-conblue{
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-[#ccff00] via-[#ffffff] to-[#286cfd];
+}
+
+.bg-conblue {
   @apply bg-[#286cfd];
 }
-.bg-conblack{
-  @apply bg-[#0c1246];
+.bg-conblack {
+  @apply bg-[#000000];
 }
-.text-conblue{
+.text-conblue {
   @apply text-[#286cfd];
 }
-.border-conblue{
+.border-conblue {
   @apply border-[#286cfd];
+}
+
+/* Custom Neobrutalist Shadow Utility */
+.neo-shadow-lemon {
+  box-shadow: 4px 4px 0px 0px #ccff00;
+}
+.neo-shadow-blue {
+  box-shadow: 4px 4px 0px 0px #286cfd;
+}
+.neo-shadow-yellow {
+  box-shadow: 4px 4px 0px 0px #facc15;
+}
+.neo-shadow-white {
+  box-shadow: 4px 4px 0px 0px #ffffff;
 }
