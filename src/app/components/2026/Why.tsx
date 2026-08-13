@@ -4,7 +4,7 @@ import React from 'react'
 
 const Why = () => {
   return (
-    <section id='why' className='pt-8 pb-16 px-6 md:px-20 max-w-8xl mx-auto'>
+    <section id='why' className='pt-8 pb-16 px-6 md:px-20 max-w-7xl mx-auto'>
       
       {/* Badge */}
       <div className="flex justify-center mb-6" data-aos="fade-up">

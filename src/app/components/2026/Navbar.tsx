@@ -35,7 +35,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
   const navLinks = [
     { label: "About", href: "#about" },
     { label: "Schedule", href: "#schedule" },
-    { label: "The Human Layer", href: "#human-layer" },
+    // { label: "The Human Layer", href: "#human-layer" },
     { label: "Speakers", href: "#speakers" },
     { label: "Sponsors", href: "#sponsors" },
     { label: "BCL Hub", href: "https://blockchainlautech.club" },
@@ -44,13 +44,20 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
   return (
     <>
       {/* Global Announcement Bar */}
-      <div className="bg-[#0C1246] text-white text-center py-2.5 px-4 sm:px-6 text-[10px] sm:text-xs font-bold z-50 fixed top-0 left-0 w-full flex items-center justify-center gap-2 border-b border-white/10 shadow-sm">
-        <span className="inline-flex items-center justify-center px-2 py-0.5 rounded bg-[#286cfd] text-[9px] font-black uppercase tracking-wider animate-pulse flex-shrink-0">
-          ANNOUNCEMENT
-        </span>
-        <span className="truncate max-w-[85%] font-bold text-slate-200">
-          The Largest Student Web3 Conference in Southwestern Nigeria is Back! Powered by Blockchain LAUTECH—a Tier-1 University Blockchain Club in Africa.
-        </span>
+      <div className="bg-[#0C1246] text-white py-2 px-4 sm:px-6 text-[10px] sm:text-xs font-bold z-50 fixed top-0 left-0 w-full flex items-center border-b border-white/10 shadow-sm overflow-hidden select-none">
+        <div className="bg-[#0C1246] pr-4 z-10 flex items-center flex-shrink-0">
+          <span className="inline-flex items-center justify-center px-2 py-0.5 rounded bg-[#286cfd] text-[9px] font-black uppercase tracking-wider animate-pulse">
+            ANNOUNCEMENT
+          </span>
+        </div>
+        <div className="relative w-full overflow-hidden flex items-center">
+          <div className="animate-marquee whitespace-nowrap flex gap-16 text-slate-200">
+            <span>The Largest Student Web3 Conference in Southwestern Nigeria is Back! Powered by Blockchain LAUTECH — a Tier-1 University Blockchain Club in Africa.</span>
+            <span>The Largest Student Web3 Conference in Southwestern Nigeria is Back! Powered by Blockchain LAUTECH — a Tier-1 University Blockchain Club in Africa.</span>
+            <span>The Largest Student Web3 Conference in Southwestern Nigeria is Back! Powered by Blockchain LAUTECH — a Tier-1 University Blockchain Club in Africa.</span>
+            <span>The Largest Student Web3 Conference in Southwestern Nigeria is Back! Powered by Blockchain LAUTECH — a Tier-1 University Blockchain Club in Africa.</span>
+          </div>
+        </div>
       </div>
 
       {/* Background overlay for mobile menu */}
@@ -62,7 +69,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
       )}
 
       {/* Floating Navbar Container */}
-      <div className="bg-black/80 backdrop-blur-md max-w-[1200px] mx-auto rounded-full shadow-2xl border border-white/10 fixed top-14 sm:top-16 left-1/2 transform -translate-x-1/2 w-[92%] z-50 transition-all duration-300">
+      <div className="bg-black/80 backdrop-blur-md max-w-[1200px] mx-auto rounded-full shadow-2xl border border-white/10 fixed top-12 sm:top-12 left-1/2 transform -translate-x-1/2 w-[92%] transition-all duration-300">
         <nav className="px-6 py-3.5">
           <div className="flex items-center justify-between mx-auto gap-4">
             

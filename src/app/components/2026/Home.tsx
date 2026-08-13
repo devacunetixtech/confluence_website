@@ -53,7 +53,7 @@ const Home = () => {
         }`} />
       </div>
 
-      <div className='flex flex-col justify-center items-center gap-8 md:pt-26 pt-28 max-sm:px-5 px-6 lg:px-20 relative z-10 max-w-7xl mx-auto'>
+      <div className='flex flex-col justify-center items-center gap-10 md:pt-32 pt-34 max-sm:px-5 px-6 lg:px-20 relative z-10 max-w-7xl mx-auto'>
         
         {/* Sub-header badge */}
         <div data-aos="fade-up" className="inline-flex items-center gap-2 bg-white/5 border border-white/10 shadow-sm px-4.5 py-2 rounded-full hover:shadow-md transition-shadow">
@@ -72,7 +72,7 @@ const Home = () => {
         <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center text-center">
           
           {/* Main Headline */}
-          <h1 className='font-black lg:text-[7.5rem] md:text-8xl sm:text-6xl text-[clamp(2.5rem,9vw,4.5rem)] text-white tracking-tighter uppercase leading-[0.85] mb-6 select-none'>
+          <h1 className='font-black lg:text-[7.5rem] md:text-8xl sm:text-6xl text-[clamp(2.5rem,9vw,4.5rem)] text-white tracking-tighter uppercase leading-[0.85] select-none'>
             <span 
               onMouseEnter={() => setActivePillar('code')}
               onMouseLeave={() => setActivePillar(null)}
@@ -104,23 +104,22 @@ const Home = () => {
             </span>
           </h1>
 
-          {/* Dynamic Supporting Copy */}
-          <div className="h-28 max-w-3xl flex items-center justify-center">
+          <div className="h-28 md:h-16 max-w-5xl flex items-center justify-center">
             {currentTheme ? (
               <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 text-center">
-                <span className={`inline-block font-black text-xs tracking-widest px-3 py-1 rounded-full uppercase mb-2 ${
+                {/* <span className={`inline-block font-black text-xs tracking-widest px-3 py-1 rounded-full uppercase mb-2 ${
                   activePillar === 'code' ? 'bg-blue-950/40 text-[#286cfd] border border-blue-900/40' : 
                   activePillar === 'create' ? 'bg-lime-950/40 text-[#ccff00] border border-lime-800/40' : 
                   'bg-yellow-950/40 text-[#facc15] border border-yellow-800/40'
                 }`}>
                   {currentTheme.badge} EXPERIENCE
-                </span>
+                </span> */}
                 <p className="text-slate-300 font-bold text-sm sm:text-base leading-relaxed">
                   {currentTheme.description}
                 </p>
               </div>
             ) : (
-              <p className="text-slate-300 font-semibold text-sm sm:text-lg md:text-xl leading-relaxed max-w-3xl">
+              <p className="text-slate-300 mt-6 font-semibold text-sm sm:text-lg md:text-xl leading-relaxed max-w-5xl">
                 Evolving the digital landscape of Ogbomoso through an immersive gathering of builders, founders, creators, and leaders. Join 1,000+ attendees at the largest student Web3 conference in Southwestern Nigeria.
               </p>
             )}
@@ -128,10 +127,10 @@ const Home = () => {
         </div>
 
         {/* Main CTA & Info Pill */}
-        <div data-aos="fade-up" data-aos-delay="200" className='flex flex-col items-center gap-6 w-full mt-4 relative z-20'>
+        <div data-aos="fade-up" data-aos-delay="200" className='flex flex-col items-center gap-4 w-full relative z-20'>
           
           {/* Date & Venue Pill */}
-          <div className="bg-black/90 border border-white/15 shadow-2xl rounded-full py-4 px-8 flex items-center justify-center gap-3 sm:gap-6 w-full max-w-[340px] sm:w-fit sm:max-w-none">
+          <div className="bg-black/90 border border-white/15 shadow-2xl rounded-full py-4 px-8 flex items-center justify-center gap-3 sm:gap-6 w-full max-w-[360px] sm:w-fit sm:max-w-none">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#ccff00] flex-shrink-0" />
               <span className="font-extrabold text-[10px] sm:text-sm text-slate-100 uppercase tracking-wider whitespace-nowrap">
@@ -150,7 +149,7 @@ const Home = () => {
           </div>
 
           {/* Hero Actions */}
-          <div className='flex flex-row gap-4 items-center justify-center mb-2 w-full max-w-[326px] sm:max-w-none'>
+          <div className='flex flex-row gap-4 items-center justify-center mb-2 w-full max-w-[330px] sm:max-w-none'>
             <button 
               onClick={() => setIsRegisterOpen(true)}
               className="flex items-center justify-center gap-2 bg-[#ccff00] hover:bg-[#b5e000] text-black hover:scale-[1.02] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-blue border border-black"
