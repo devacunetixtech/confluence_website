@@ -142,7 +142,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
                 type="button"
                 className="text-black bg-[#ccff00] hover:bg-[#b5e000] font-black rounded-full text-xs sm:text-sm px-5 py-2 sm:py-2.5 text-center cursor-pointer transition-all duration-200 neo-shadow-blue border border-black"
               >
-                Register
+                Join Waitlist
               </button>
 
               {/* Mobile hamburger menu */}

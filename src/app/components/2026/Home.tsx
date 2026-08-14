@@ -178,7 +178,7 @@ const Home = () => {
               onClick={() => setIsRegisterOpen(true)}
               className="flex items-center justify-center gap-2 bg-[#ccff00] hover:bg-[#b5e000] text-black hover:scale-[1.02] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-blue border border-black"
             >
-              Register <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              Join Waitlist <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             
             <a 
