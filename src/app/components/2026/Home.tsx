@@ -1,13 +1,28 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { MapPin, Calendar, ArrowDown, ArrowUpRight } from 'lucide-react'
 import Navbar from './Navbar'
 import CountdownTimer from './CountdownTimer'
 
 const Home = () => {
-  const [activePillar, setActivePillar] = useState<'code' | 'create' | 'connect' | null>(null);
+  const [activePillar, setActivePillar] = useState<'code' | 'create' | 'connect'>('code');
+  const [isHovered, setIsHovered] = useState(false);
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
+
+  useEffect(() => {
+    if (isHovered) return;
+
+    const pillars: ('code' | 'create' | 'connect')[] = ['code', 'create', 'connect'];
+    const interval = setInterval(() => {
+      setActivePillar((prev) => {
+        const currentIndex = pillars.indexOf(prev);
+        return pillars[(currentIndex + 1) % pillars.length];
+      });
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isHovered]);
 
   // Map active pillar to styling tokens
   const themeDetails = {
@@ -74,30 +89,39 @@ const Home = () => {
           {/* Main Headline */}
           <h1 className='font-black lg:text-[7.5rem] md:text-8xl sm:text-6xl text-[clamp(2.5rem,9vw,4.5rem)] text-white tracking-tighter uppercase leading-[0.85] select-none'>
             <span 
-              onMouseEnter={() => setActivePillar('code')}
-              onMouseLeave={() => setActivePillar(null)}
+              onMouseEnter={() => {
+                setActivePillar('code');
+                setIsHovered(true);
+              }}
+              onMouseLeave={() => setIsHovered(false)}
               className={`transition-all duration-300 cursor-pointer inline-block hover:scale-[1.02] ${
-                activePillar === 'code' ? 'text-[#286cfd]' : activePillar ? 'opacity-30' : ''
+                activePillar === 'code' ? 'text-[#286cfd]' : 'opacity-30'
               }`}
             >
               CODE.
             </span>
             <span className="mx-2 sm:mx-4 opacity-10">/</span>
             <span 
-              onMouseEnter={() => setActivePillar('create')}
-              onMouseLeave={() => setActivePillar(null)}
+              onMouseEnter={() => {
+                setActivePillar('create');
+                setIsHovered(true);
+              }}
+              onMouseLeave={() => setIsHovered(false)}
               className={`transition-all duration-300 cursor-pointer inline-block hover:scale-[1.02] ${
-                activePillar === 'create' ? 'text-[#ccff00]' : activePillar ? 'opacity-30' : ''
+                activePillar === 'create' ? 'text-[#ccff00]' : 'opacity-30'
               }`}
             >
               CREATE.
             </span>
             <span className="mx-2 sm:mx-4 opacity-10">/</span>
             <span 
-              onMouseEnter={() => setActivePillar('connect')}
-              onMouseLeave={() => setActivePillar(null)}
+              onMouseEnter={() => {
+                setActivePillar('connect');
+                setIsHovered(true);
+              }}
+              onMouseLeave={() => setIsHovered(false)}
               className={`transition-all duration-300 cursor-pointer inline-block hover:scale-[1.02] ${
-                activePillar === 'connect' ? 'text-[#facc15]' : activePillar ? 'opacity-30' : ''
+                activePillar === 'connect' ? 'text-[#facc15]' : 'opacity-30'
               }`}
             >
               CONNECT.

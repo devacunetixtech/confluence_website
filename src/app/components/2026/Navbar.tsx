@@ -19,16 +19,43 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
 
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleRegisterSubmit = (e: React.FormEvent) => {
+  const handleRegisterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-        setIsRegisterOpen(false);
-        setEmail("");
-      }, 2000);
+    if (!email) return;
+
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const sheetsUrl = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || "https://script.google.com/macros/s/YOUR_APPS_SCRIPT_ID/exec";
+
+      const response = await fetch(sheetsUrl, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `email=${encodeURIComponent(email)}`
+      });
+
+      // With mode: 'no-cors', the response status is 0. We treat it as success.
+      if (response.status === 0 || response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setIsRegisterOpen(false);
+          setEmail("");
+        }, 3000);
+      } else {
+        setError("Failed to submit. Please try again.");
+      }
+    } catch {
+      setError("A connection error occurred. Please check your internet connection.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -69,7 +96,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
       )}
 
       {/* Floating Navbar Container */}
-      <div className="bg-black/80 backdrop-blur-md max-w-[1200px] mx-auto rounded-full shadow-2xl border border-white/10 fixed top-12 sm:top-12 left-1/2 transform -translate-x-1/2 w-[92%] transition-all duration-300">
+      <div className="bg-black/80 backdrop-blur-md max-w-[1200px] mx-auto rounded-full shadow-2xl border border-white/10 fixed top-12 sm:top-12 left-1/2 transform -translate-x-1/2 w-[92%] transition-all duration-300 z-50">
         <nav className="px-6 py-3.5">
           <div className="flex items-center justify-between mx-auto gap-4">
             
@@ -214,18 +241,32 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
                     <input 
                       type="email"
                       required
+                      disabled={isSubmitting}
                       placeholder="you@example.com"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#286cfd] focus:border-transparent font-medium text-slate-900 transition-all placeholder-slate-400"
+                      className="w-full px-4 py-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#286cfd] focus:border-transparent font-medium text-slate-900 transition-all placeholder-slate-400 disabled:opacity-50"
                     />
+                    {error && (
+                      <p className="text-red-500 text-xs font-semibold mt-2 animate-in fade-in">
+                        {error}
+                      </p>
+                    )}
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#286cfd] hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-blue-500/20 cursor-pointer transition-all duration-200"
+                    disabled={isSubmitting}
+                    className="w-full bg-[#286cfd] hover:bg-blue-700 disabled:bg-blue-400 text-white font-bold py-4 px-6 rounded-xl shadow-lg shadow-blue-500/20 cursor-pointer transition-all duration-200 flex items-center justify-center gap-2"
                   >
-                    Keep Me Updated
+                    {isSubmitting ? (
+                      <>
+                        <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                        Submitting...
+                      </>
+                    ) : (
+                      "Keep Me Updated"
+                    )}
                   </button>
                 </form>
 
