@@ -10,10 +10,10 @@ const Pillars = () => {
     code: {
       title: "CODE.",
       subtitle: "The Builders",
-      description: "Developers, founders, hackers, engineers, and protocol architects constructing open-source protocols, smart contracts, and Web3 infrastructure from the ground up. Features technical workshops, developer bootcamps, and 24-hour hackathon sprints.",
+      description: "Capturing developers, founders, hackers, engineers, and protocol architects constructing open-source protocols, smart contracts, and Web3 infrastructure from the ground up. Features technical workshops, and hackathon sprints.",
       details: [
-        { icon: Cpu, text: "Technical workshops & developer bootcamps" },
-        { icon: Terminal, text: "24-Hour hackathon sprints to build live solutions" },
+        { icon: Cpu, text: "Technical workshops" },
+        { icon: Terminal, text: "Hackathon sprints to build live solutions" },
       ],
       color: "border-l-[#286cfd] text-[#286cfd] bg-blue-950/25",
       accent: "#286cfd",
@@ -23,7 +23,7 @@ const Pillars = () => {
     create: {
       title: "CREATE.",
       subtitle: "The Visionaries",
-      description: "Founders, artists, entrepreneurs, thinkers, and product designers turning ambitious ideas into viable companies, art, media, and digital products. Includes \"Create with Purpose\" and a dedicated founders track.",
+      description: "Capturing founders, entrepreneurs, thinkers, and product designers turning ambitious ideas into viable companies, media, and digital products.",
       details: [
         { icon: Sparkles, text: "Create with Purpose: A chill creative evening" },
         { icon: Target, text: "Founders track addressing venture building & product-market scale" }
@@ -36,7 +36,7 @@ const Pillars = () => {
     connect: {
       title: "CONNECT.",
       subtitle: "The Community",
-      description: "Capturing the human side of technology, replacing transactional panel noise with raw human stories, networking, and bonding. Includes \"The Human Layer\" phone-free sessions, novelty sports, and gaming.",
+      description: "Capturing the human side of technology, replacing transactional panel noise with raw human stories, networking, and bonding. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.",
       details: [
         { icon: UsersIcon, text: "The Human Layer: Intimate phone-free unplugged conversations" },
         { icon: Trophy, text: "Novelty sports, gaming, and relaxing team bonding IRL" },

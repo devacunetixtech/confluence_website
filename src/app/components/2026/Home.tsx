@@ -29,19 +29,19 @@ const Home = () => {
     code: {
       color: 'text-[#286cfd]',
       bgGlow: 'bg-[#286cfd]/10',
-      description: 'Developers, founders, hackers, engineers, and protocol architects constructing open-source protocols, smart contracts, and Web3 infrastructure from the ground up. Features technical workshops, developer bootcamps, and 24-hour hackathon sprints.',
+      description: 'Capturing developers, founders, hackers, engineers, and protocol architects constructing open-source protocols, smart contracts, and Web3 infrastructure from the ground up. Features technical workshops, and hackathon sprints.',
       badge: 'CODE'
     },
     create: {
       color: 'text-[#ccff00]',
       bgGlow: 'bg-[#ccff00]/10',
-      description: 'Founders, artists, entrepreneurs, thinkers, and product designers turning ambitious ideas into viable companies, art, media, and digital products. Includes "Create with Purpose" and a dedicated founders track.',
+      description: 'Capturing founders, entrepreneurs, thinkers, and product designers turning ambitious ideas into viable companies, media, and digital products.',
       badge: 'CREATE'
     },
     connect: {
       color: 'text-[#facc15]',
       bgGlow: 'bg-[#facc15]/10',
-      description: 'Capturing the human side of technology, replacing transactional panel noise with raw human stories, networking, and bonding. Includes "The Human Layer" phone-free sessions, novelty sports, and gaming.',
+      description: 'Capturing the human side of technology, replacing transactional panel noise with raw human stories, networking, and bonding. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
       badge: 'CONNECT'
     }
   };
@@ -158,7 +158,7 @@ const Home = () => {
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#ccff00] flex-shrink-0" />
               <span className="font-extrabold text-[10px] sm:text-sm text-slate-100 uppercase tracking-wider whitespace-nowrap">
-                September 21–26, 2026
+                November 5–7, 2026
               </span>
             </div>
             
@@ -174,12 +174,16 @@ const Home = () => {
 
           {/* Hero Actions */}
           <div className='flex flex-row gap-4 items-center justify-center mb-2 w-full max-w-[330px] sm:max-w-none'>
-            <button 
-              onClick={() => setIsRegisterOpen(true)}
+            <a 
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                setIsRegisterOpen(true);
+              }}
               className="flex items-center justify-center gap-2 bg-[#ccff00] hover:bg-[#b5e000] text-black hover:scale-[1.02] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-blue border border-black"
             >
-              Join Waitlist <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
+              Register To Attend <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+            </a>
             
             <a 
               href="#schedule" 
