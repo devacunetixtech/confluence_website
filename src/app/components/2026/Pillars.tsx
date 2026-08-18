@@ -14,12 +14,12 @@ const Pillars = () => {
         "In this track, we would be exploring AI, blockchain, open-source infrastructure, digital identity, payments, security, and emerging technologies. This track is about going beyond the conversation and getting closer to the technology itself."
       ],
       details: [
-        "technical deep dives",
-        "workshops",
-        "developer conversations",
-        "live builds",
-        "ecosystem insights",
-        "practical knowledge you can take back and build with."
+        "Technical deep dives",
+        "Workshops",
+        "Developer conversations",
+        "Live builds",
+        "Ecosystem insights",
+        "Practical knowledge you can take back and build with."
       ],
       color: "border-l-[#286cfd] text-[#286cfd] bg-blue-950/25",
       accent: "#286cfd",
