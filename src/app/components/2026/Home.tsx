@@ -40,7 +40,7 @@ const Home = () => {
     connect: {
       color: 'text-[#facc15]',
       bgGlow: 'bg-[#facc15]/10',
-      description: 'CONNECT is the human layer of Confluence - a space for students, professionals, creators, communities, founders, and ecosystem leaders to meet, exchange ideas, find opportunities, and build relationships that extend far beyond confluence. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
+      description: 'CONNECT is a space for students, professionals, creators, communities, founders, and ecosystem leaders to meet, exchange ideas, find opportunities, and build relationships that extend far beyond confluence. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
       badge: 'CONNECT'
     }
   };
@@ -86,7 +86,7 @@ const Home = () => {
         <div data-aos="fade-up" data-aos-delay="100" className="flex flex-col items-center text-center">
           
           {/* Main Headline */}
-          <h1 className='font-black lg:text-[7.5rem] md:text-8xl sm:text-6xl text-[clamp(2.5rem,9vw,4.5rem)] text-white tracking-tighter uppercase leading-[0.85] select-none'>
+          <h1 className='mb-2 font-black lg:text-[7.5rem] md:text-8xl sm:text-6xl text-[clamp(2.5rem,9vw,4.5rem)] text-white tracking-tighter uppercase leading-[0.85] select-none'>
             <span 
               onMouseEnter={() => {
                 setActivePillar('code');
