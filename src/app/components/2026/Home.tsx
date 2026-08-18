@@ -24,24 +24,23 @@ const Home = () => {
     return () => clearInterval(interval);
   }, [isHovered]);
 
-  // Map active pillar to styling tokens
   const themeDetails = {
     code: {
       color: 'text-[#286cfd]',
       bgGlow: 'bg-[#286cfd]/10',
-      description: 'CODE is where developers, engineers, researchers, and technical minds come together to explore the technologies powering the next generation of the digital economy.',
+      description: 'Capturing developers, engineers, researchers, and technical minds coming together to explore the technologies powering the next generation of the digital economy. Features technical workshops, and hackathon sprints.',
       badge: 'CODE'
     },
     create: {
       color: 'text-[#ccff00]',
       bgGlow: 'bg-[#ccff00]/10',
-      description: 'CREATE brings together founders, entrepreneurs, product builders, creators, and innovators who are turning ideas into companies, products, communities, and solutions for real problems.',
+      description: 'Capturing founders, entrepreneurs, product builders, creators, and innovators turning ideas into companies, products, communities, and solutions for real problems.',
       badge: 'CREATE'
     },
     connect: {
       color: 'text-[#facc15]',
       bgGlow: 'bg-[#facc15]/10',
-      description: 'CONNECT is the human layer of Confluence - a space for students, professionals, creators, communities, founders, ecosystem leaders, and curious minds to meet, exchange ideas, find opportunities, and build relationships that extend far beyond the conference.',
+      description: 'CONNECT is the human layer of Confluence - a space for students, professionals, creators, communities, founders, ecosystem leaders, and curious minds to meet, exchange ideas, find opportunities, and build relationships that extend far beyond the conference. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
       badge: 'CONNECT'
     }
   };
