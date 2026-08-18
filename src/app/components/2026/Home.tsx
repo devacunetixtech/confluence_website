@@ -40,7 +40,7 @@ const Home = () => {
     connect: {
       color: 'text-[#facc15]',
       bgGlow: 'bg-[#facc15]/10',
-      description: 'CONNECT is a space for students, professionals, creators, communities, founders, and ecosystem leaders to meet, exchange ideas, find opportunities, and build relationships that extend far beyond confluence. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
+      description: 'Capturing the space for students, professionals, creators, communities, founders, and ecosystem leaders to meet, exchange ideas, find opportunities, and build relationships that extend far beyond confluence. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
       badge: 'CONNECT'
     }
   };

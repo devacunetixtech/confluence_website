@@ -6,7 +6,7 @@ import { Calendar, MapPin, Clock, PhoneOff, Rocket, Code2, Users2, Activity, Spa
 interface Session {
   time: string;
   title: string;
-  description: string;
+  description: React.ReactNode;
   venue: string;
   track: 'Kickoff' | 'Human Layer' | 'Founders' | 'Dev Track' | 'Community';
   details?: string[];
@@ -80,7 +80,7 @@ const scheduleData: DayData[] = [
         time: 'Evening (Expected 3:00–4:00 PM)',
         title: 'Create with Purpose',
         description: 'A chill creative evening blending soft music and deep ambient conversations. A visual departure from conventional tech conferences, blending art gallery aesthetics with an intimate creative studio.',
-        venue: 'TBA',
+        venue: 'Closed Door',
         track: 'Human Layer',
         details: ['Soft music & ambient talks', 'Intimate creative studio vibes'],
         registerUrl: '#'
@@ -96,7 +96,12 @@ const scheduleData: DayData[] = [
       {
         time: '11:00 AM',
         title: 'Founders Track: The Confluence Fellowship',
-        description: 'A prestigious network of 20 young founders under 30 in Ogbomoso focused on raising capital, building in public, and scaling products. Note: registration does not validate entry, approval is required to be able to attend.',
+        description: (
+          <>
+            A prestigious network of 20 young founders under 30 in Ogbomoso focused on raising capital, building in public, and scaling products.
+            <strong className="block mt-2 text-white">Note: registration does not validate entry, approval is required to be able to attend.</strong>
+          </>
+        ),
         venue: 'Willows Nest Hotel',
         track: 'Founders',
         details: [
@@ -162,8 +167,11 @@ const Schedule = () => {
 
   const currentDayData = scheduleData.find(d => d.id === activeDay) || scheduleData[3];
 
-  const getTrackIcon = (track: string) => {
-    switch (track) {
+  const getTrackIcon = (session: Session) => {
+    if (session.track === 'Human Layer' && (session.title.includes('Sports') || session.title.includes('Games'))) {
+      return <Users2 className="w-4 h-4" />;
+    }
+    switch (session.track) {
       case 'Kickoff': return <Users2 className="w-4 h-4" />;
       case 'Human Layer': return <PhoneOff className="w-4 h-4" />;
       case 'Founders': return <Rocket className="w-4 h-4" />;
@@ -286,7 +294,7 @@ const Schedule = () => {
                 {/* Meta details tag */}
                 <div className="flex flex-wrap gap-2 items-center">
                   <span className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border ${getTrackColor(session.track)}`}>
-                    {getTrackIcon(session.track)}
+                    {getTrackIcon(session)}
                     {session.track}
                   </span>
                   
@@ -340,13 +348,27 @@ const Schedule = () => {
                 </div>
 
                 {session.registerUrl && (
-                  session.title.includes('Unplugged Room') ? (
-                    <a 
-                      href="#"
-                      className="w-full bg-[#286cfd] hover:bg-blue-700 text-white font-extrabold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block uppercase tracking-wider border border-black shadow-sm"
+                  (session.title.includes('Unplugged Room') || session.title.includes('Create with Purpose')) ? (
+                    <div className="w-full flex flex-col gap-1.5 md:mt-2">
+                      <a 
+                        href="#"
+                        className="w-full bg-[#286cfd] hover:bg-blue-700 text-white font-extrabold rounded-xl text-xs py-3 text-center transition-all duration-200 block uppercase tracking-wider border border-black shadow-sm"
+                      >
+                        Buy Ticket
+                      </a>
+                      <span className="text-[10px] text-slate-400 font-semibold text-center block leading-tight">
+                        Same payment covers both sessions
+                      </span>
+                    </div>
+                  ) : session.title.includes('Confluence Fellowship') ? (
+                    <button 
+                      disabled
+                      type="button"
+                      data-register-url={session.registerUrl}
+                      className="w-full bg-white/5 text-slate-500 border border-white/10 font-bold rounded-xl text-xs py-3 text-center cursor-not-allowed transition-all duration-200 md:mt-2"
                     >
-                      Buy Ticket
-                    </a>
+                      Apply
+                    </button>
                   ) : (
                     <button 
                       disabled
