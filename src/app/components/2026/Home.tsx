@@ -40,7 +40,7 @@ const Home = () => {
     connect: {
       color: 'text-[#facc15]',
       bgGlow: 'bg-[#facc15]/10',
-      description: 'CONNECT is the human layer of Confluence - a space for students, professionals, creators, communities, founders, ecosystem leaders, and curious minds to meet, exchange ideas, find opportunities, and build relationships that extend far beyond the conference. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
+      description: 'CONNECT is the human layer of Confluence - a space for students, professionals, creators, communities, founders, and ecosystem leaders to meet, exchange ideas, find opportunities, and build relationships that extend far beyond confluence. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
       badge: 'CONNECT'
     }
   };
@@ -127,7 +127,7 @@ const Home = () => {
             </span>
           </h1>
 
-          <div className="h-28 mt-2 md:h-16 max-w-5xl flex items-center justify-center">
+          <div className="h-30 mt-2 md:h-16 max-w-5xl flex items-center justify-center">
             {currentTheme ? (
               <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 text-center">
                 {/* <span className={`inline-block font-black text-xs tracking-widest px-3 py-1 rounded-full uppercase mb-2 ${
