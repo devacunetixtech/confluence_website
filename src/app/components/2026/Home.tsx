@@ -127,7 +127,7 @@ const Home = () => {
             </span>
           </h1>
 
-          <div className="h-28 md:h-16 max-w-5xl flex items-center justify-center">
+          <div className="h-28 mt-2 md:h-16 max-w-5xl flex items-center justify-center">
             {currentTheme ? (
               <div className="animate-in fade-in slide-in-from-bottom-2 duration-300 text-center">
                 {/* <span className={`inline-block font-black text-xs tracking-widest px-3 py-1 rounded-full uppercase mb-2 ${
