@@ -29,19 +29,19 @@ const Home = () => {
     code: {
       color: 'text-[#286cfd]',
       bgGlow: 'bg-[#286cfd]/10',
-      description: 'Capturing developers, founders, hackers, engineers, and protocol architects constructing open-source protocols, smart contracts, and Web3 infrastructure from the ground up. Features technical workshops, and hackathon sprints.',
+      description: 'CODE is where developers, engineers, researchers, and technical minds come together to explore the technologies powering the next generation of the digital economy.',
       badge: 'CODE'
     },
     create: {
       color: 'text-[#ccff00]',
       bgGlow: 'bg-[#ccff00]/10',
-      description: 'Capturing founders, entrepreneurs, thinkers, and product designers turning ambitious ideas into viable companies, media, and digital products.',
+      description: 'CREATE brings together founders, entrepreneurs, product builders, creators, and innovators who are turning ideas into companies, products, communities, and solutions for real problems.',
       badge: 'CREATE'
     },
     connect: {
       color: 'text-[#facc15]',
       bgGlow: 'bg-[#facc15]/10',
-      description: 'Capturing the human side of technology, replacing transactional panel noise with raw human stories, networking, and bonding. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.',
+      description: 'CONNECT is the human layer of Confluence - a space for students, professionals, creators, communities, founders, ecosystem leaders, and curious minds to meet, exchange ideas, find opportunities, and build relationships that extend far beyond the conference.',
       badge: 'CONNECT'
     }
   };
@@ -71,15 +71,15 @@ const Home = () => {
       <div className='flex flex-col justify-center items-center gap-10 md:pt-32 pt-34 max-sm:px-5 px-6 lg:px-20 relative z-10 max-w-7xl mx-auto'>
         
         {/* Sub-header badge */}
-        <div data-aos="fade-up" className="inline-flex items-center gap-2 bg-white/5 border border-white/10 shadow-sm px-4.5 py-2 rounded-full hover:shadow-md transition-shadow">
-          <span className={`w-2.5 h-2.5 rounded-full transition-colors duration-500 ${
+        <div data-aos="fade-up" className="flex sm:inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 shadow-sm px-4.5 py-2.5 rounded-3xl sm:rounded-full hover:shadow-md transition-shadow max-w-full">
+          <span className={`w-2.5 h-2.5 rounded-full flex-shrink-0 transition-colors duration-500 ${
             activePillar === 'code' ? 'bg-[#286cfd] animate-pulse' : 
             activePillar === 'create' ? 'bg-[#ccff00] animate-pulse' : 
             activePillar === 'connect' ? 'bg-[#facc15] animate-pulse' : 
             'bg-[#286cfd] animate-pulse'
           }`}></span>
-          <span className="text-white font-extrabold text-xs uppercase tracking-widest">
-            BLOCKCHAIN CLUB LAUTECH PRESENTS
+          <span className="text-white font-extrabold text-[10px] sm:text-xs uppercase tracking-widest text-center leading-normal">
+            Blockchain LAUTECH Presents: The Largest Student-led Blockchain Conference in Africa
           </span>
         </div>
 
@@ -154,7 +154,7 @@ const Home = () => {
         <div data-aos="fade-up" data-aos-delay="200" className='flex flex-col items-center gap-4 w-full relative z-20'>
           
           {/* Date & Venue Pill */}
-          <div className="bg-black/90 border border-white/15 shadow-2xl rounded-full py-4 px-8 flex items-center justify-center gap-3 sm:gap-6 w-full max-w-[360px] sm:w-fit sm:max-w-none">
+          <div className="bg-black/90 border border-white/15 shadow-2xl rounded-3xl sm:rounded-full py-4 px-6 sm:px-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 w-full max-w-[360px] sm:w-fit sm:max-w-none">
             <div className="flex items-center gap-2">
               <Calendar className="w-4 h-4 sm:w-5 sm:h-5 text-[#ccff00] flex-shrink-0" />
               <span className="font-extrabold text-[10px] sm:text-sm text-slate-100 uppercase tracking-wider whitespace-nowrap">
@@ -162,12 +162,12 @@ const Home = () => {
               </span>
             </div>
             
-            <div className="w-1.5 h-1.5 rounded-full bg-[#286cfd] flex-shrink-0"></div>
+            <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[#286cfd] flex-shrink-0"></div>
             
             <div className="flex items-center gap-2">
               <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#ccff00] flex-shrink-0" />
-              <span className="font-extrabold text-[10px] sm:text-sm text-slate-100 uppercase tracking-wider whitespace-nowrap">
-                Ogbomoso, Nigeria
+              <span className="font-extrabold text-[10px] sm:text-sm text-slate-100 uppercase tracking-wider text-center sm:text-left">
+                The Great Hall, LAUTECH, Ogbomoso
               </span>
             </div>
           </div>

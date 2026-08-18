@@ -20,7 +20,7 @@ const About = () => {
         data-aos-delay="100"
         className='text-center text-gradient text-3xl md:text-5xl font-black uppercase tracking-tight max-w-3xl mx-auto mb-10'
       >
-        Evolving the Digital Landscape of Ogbomoso
+        {"Evolving Africa's Digital Landscape From Ogbomoso"}
       </h3>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -48,7 +48,7 @@ const About = () => {
             </div>
             <div>
               <h4 className="text-4xl sm:text-5xl font-black text-white tracking-tight group-hover:text-[#286cfd] transition-colors duration-300">
-                5,000+
+                7,500+
               </h4>
               <p className="text-slate-400 font-bold text-xs uppercase tracking-wider mt-1">
                 Students Trained & Mentored

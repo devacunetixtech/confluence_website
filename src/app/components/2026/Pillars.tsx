@@ -1,7 +1,6 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Cpu, Terminal, Sparkles, Target, Users as UsersIcon, Trophy } from 'lucide-react'
 
 const Pillars = () => {
   const [activeTab, setActiveTab] = useState<'code' | 'create' | 'connect'>('code');
@@ -10,10 +9,17 @@ const Pillars = () => {
     code: {
       title: "CODE.",
       subtitle: "The Builders",
-      description: "Capturing developers, founders, hackers, engineers, and protocol architects constructing open-source protocols, smart contracts, and Web3 infrastructure from the ground up. Features technical workshops, and hackathon sprints.",
+      description: [
+        "CODE is where developers, engineers, researchers, and technical minds come together to explore the technologies powering the next generation of the digital economy.",
+        "In this track, we would be exploring AI, blockchain, open-source infrastructure, digital identity, payments, security, and emerging technologies. This track is about going beyond the conversation and getting closer to the technology itself."
+      ],
       details: [
-        { icon: Cpu, text: "Technical workshops" },
-        { icon: Terminal, text: "Hackathon sprints to build live solutions" },
+        "technical deep dives",
+        "workshops",
+        "developer conversations",
+        "live builds",
+        "ecosystem insights",
+        "practical knowledge you can take back and build with."
       ],
       color: "border-l-[#286cfd] text-[#286cfd] bg-blue-950/25",
       accent: "#286cfd",
@@ -23,10 +29,19 @@ const Pillars = () => {
     create: {
       title: "CREATE.",
       subtitle: "The Visionaries",
-      description: "Capturing founders, entrepreneurs, thinkers, and product designers turning ambitious ideas into viable companies, media, and digital products.",
+      description: [
+        "CREATE brings together founders, entrepreneurs, product builders, creators, and innovators who are turning ideas into companies, products, communities, and solutions for real problems.",
+        "This is where we talk about what actually happens after the idea.",
+        "No pitch-deck fantasies. No overnight-success stories. Just honest conversations with people in the arena."
+      ],
       details: [
-        { icon: Sparkles, text: "Create with Purpose: A chill creative evening" },
-        { icon: Target, text: "Founders track addressing venture building & product-market scale" }
+        "Building in Africa.",
+        "Finding product-market fit.",
+        "Raising capital.",
+        "Creating sustainable businesses.",
+        "Navigating failure.",
+        "Building teams.",
+        "Going from MVP to something people actually want."
       ],
       color: "border-l-[#ccff00] text-[#ccff00] bg-lime-950/25",
       accent: "#ccff00",
@@ -36,10 +51,18 @@ const Pillars = () => {
     connect: {
       title: "CONNECT.",
       subtitle: "The Community",
-      description: "Capturing the human side of technology, replacing transactional panel noise with raw human stories, networking, and bonding. Connecting people to people, talent to opportunity, ideas to resources, Africa to the global ecosystem.",
+      description: [
+        "CONNECT is the human layer of Confluence - a space for students, professionals, creators, communities, founders, ecosystem leaders, and curious minds to meet, exchange ideas, find opportunities, and build relationships that extend far beyond the conference. This track explores what happens when the right people are in the same room.",
+        "Because sometimes, the most valuable thing you take away from a conference isn't a slide deck. It's a person you met. An idea you exchanged. An opportunity you discovered."
+      ],
       details: [
-        { icon: UsersIcon, text: "The Human Layer: Intimate phone-free unplugged conversations" },
-        { icon: Trophy, text: "Novelty sports, gaming, and relaxing team bonding IRL" },
+        "Novelty Sports",
+        "The Human Layer Experience",
+        "Community building",
+        "Mentorship",
+        "The creator economy",
+        "Digital opportunities",
+        "Collaboration"
       ],
       color: "border-l-[#facc15] text-[#facc15] bg-yellow-950/25",
       accent: "#facc15",
@@ -55,8 +78,8 @@ const Pillars = () => {
       
       {/* Badge */}
       <div className="flex justify-center mb-6" data-aos="fade-up">
-        <div className='text-xs sm:text-sm font-bold bg-white/5 py-2.5 px-6 rounded-full w-fit text-nowrap shadow border border-white/10'>
-          <h2 className='text-gradient uppercase tracking-widest'>Three Dimensions of Confluence</h2>
+        <div className='text-xs sm:text-sm font-bold bg-white/5 py-2.5 px-6 rounded-3xl w-fit max-w-2xl text-center shadow border border-white/10'>
+          <h2 className='text-gradient uppercase tracking-widest leading-relaxed'>Three ways to shape the future. One place to bring it together.</h2>
         </div>
       </div>
 
@@ -106,31 +129,30 @@ const Pillars = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 mt-8 items-start relative z-10">
           {/* Main Description */}
-          <div className="lg:col-span-6">
-            <p className="text-slate-300 text-base sm:text-lg leading-relaxed text-justify font-medium">
-              {activePillar.description}
-            </p>
+          <div className="lg:col-span-6 space-y-4">
+            {activePillar.description.map((para, idx) => (
+              <p key={idx} className="text-slate-300 text-base sm:text-lg leading-relaxed text-justify font-medium">
+                {para}
+              </p>
+            ))}
           </div>
 
           {/* Details Bullet List */}
-          <div className="lg:col-span-6 space-y-5">
+          <div className="lg:col-span-6 space-y-4">
             <h4 className="text-xs uppercase font-extrabold tracking-wider text-slate-400 mb-2">What to expect:</h4>
-            {activePillar.details.map((detail, idx) => {
-              const Icon = detail.icon;
-              return (
-                <div key={idx} className="flex items-start gap-4 hover:translate-x-1 transition-transform duration-200">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
+              {activePillar.details.map((text, idx) => (
+                <div key={idx} className="flex items-start gap-3 hover:translate-x-1 transition-transform duration-200">
                   <span 
-                    className="p-3 rounded-2xl flex-shrink-0"
-                    style={{ backgroundColor: `${activePillar.accent}20`, color: activePillar.accent }}
-                  >
-                    <Icon className="w-5 h-5" />
-                  </span>
-                  <p className="text-slate-200 text-sm sm:text-base font-bold leading-snug pt-1.5">
-                    {detail.text}
+                    className="w-1.5 h-1.5 rounded-full mt-2.5 flex-shrink-0"
+                    style={{ backgroundColor: activePillar.accent }}
+                  />
+                  <p className="text-slate-200 text-sm sm:text-base font-bold leading-snug">
+                    {text}
                   </p>
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
         </div>
       </div>

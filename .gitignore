@@ -10,6 +10,7 @@
 !.yarn/releases
 !.yarn/versions
 
+confluence-2.0.md
 # testing
 /coverage
 
