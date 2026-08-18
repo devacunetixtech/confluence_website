@@ -24,22 +24,22 @@ interface DayData {
 const scheduleData: DayData[] = [
   {
     id: 'mon',
-    date: 'Monday, Sept 21',
+    date: 'Monday, Nov 2',
     title: 'KICKOFF',
     phase: 'Road to Confluence',
     sessions: [
       {
-        time: 'TBA',
+        time: '9:00 AM',
         title: 'Kickoff: Team IRL Sync & Bonding Session (Internal / Core Operations)',
-        description: 'A relaxed bonding session to discuss growth plans, unwind, and prepare core organizers.',
-        venue: 'Internal / Core Operations',
+        description: 'A strategic team session bringing together core team, advisors, and staff advisers, to discuss growth plans, and community direction. This session is followed by a relaxed bonding session to unwind and prepare core organizers for Confluence.',
+        venue: 'Closed Door',
         track: 'Kickoff'
       }
     ]
   },
   {
     id: 'tue',
-    date: 'Tuesday, Sept 22',
+    date: 'Tuesday, Nov 3',
     title: 'THE HUMAN LAYER',
     phase: 'Road to Confluence',
     sessions: [
@@ -50,21 +50,21 @@ const scheduleData: DayData[] = [
         venue: 'Maracana, Ogbomoso',
         track: 'Human Layer',
         details: ['Football', 'Tennis', 'Games'],
-        registerUrl: 'https://blockchainlautech.club/confluence2.0/register/sports'
+        registerUrl: '#'
       }
     ]
   },
   {
     id: 'wed',
-    date: 'Wednesday, Sept 23',
+    date: 'Wednesday, Nov 4',
     title: 'THE HUMAN LAYER',
     phase: 'Road to Confluence',
     sessions: [
       {
-        time: 'Morning (TBA)',
+        time: '9:00 AM',
         title: 'The Human Layer: Unplugged Room (Strictly 50 Seats)',
         description: 'Phone-free, technology-free environment for human-centered conversations on building, failure, burnout, and student developer journeys. Replacing traditional tech panels with raw human stories.',
-        venue: 'TBA',
+        venue: 'Closed Door',
         track: 'Human Layer',
         details: [
           '“What are you building, and why?”',
@@ -74,7 +74,7 @@ const scheduleData: DayData[] = [
           'Story theme: “A student navigating tech in Nigeria”',
           'Story theme: “A creative lost in the noise of Web3”'
         ],
-        registerUrl: 'https://blockchainlautech.club/confluence2.0/register/unplugged'
+        registerUrl: '#'
       },
       {
         time: 'Evening (Expected 3:00–4:00 PM)',
@@ -83,43 +83,47 @@ const scheduleData: DayData[] = [
         venue: 'TBA',
         track: 'Human Layer',
         details: ['Soft music & ambient talks', 'Intimate creative studio vibes'],
-        registerUrl: 'https://blockchainlautech.club/confluence2.0/register/create'
+        registerUrl: '#'
       }
     ]
   },
   {
     id: 'thu',
-    date: 'Thursday, Sept 24',
+    date: 'Thursday, Nov 5',
     title: 'CONFLUENCE BEGINS',
     phase: 'Confluence 2.0 (Main Conference)',
     sessions: [
       {
-        time: 'Morning (TBA)',
-        title: 'Confluence Begins: Founders Track: The Confluence Fellowship',
-        description: 'A prestigious network of 20–30 young founders under 30 in Ogbomoso focused on raising capital, building in public, and scaling products.',
-        venue: 'TBA',
+        time: '11:00 AM',
+        title: 'Founders Track: The Confluence Fellowship',
+        description: 'A prestigious network of 20 young founders under 30 in Ogbomoso focused on raising capital, building in public, and scaling products. Note: registration does not validate entry, approval is required to be able to attend.',
+        venue: 'Willows Nest Hotel',
         track: 'Founders',
         details: [
+          'Building in Africa',
+          'Finding product-market fit',
           'Raising capital',
-          'Building in public',
-          'Scaling products'
+          'Creating sustainable businesses',
+          'Navigating failure',
+          'Building teams',
+          'Going from MVP to something people actually want'
         ],
-        registerUrl: 'https://blockchainlautech.club/confluence2.0/register/fellowship'
+        registerUrl: '#'
       },
       {
-        time: 'Evening (TBA)',
+        time: '5:00 PM',
         title: 'Dev Track: 24-Hour Hackathon Sprint',
-        description: '18 HOURS TO BUILD. 6 HOURS TO DEMO. The developer track sprint kicks off Thursday evening, pushing technical builders to create live solutions before Friday concluding.',
-        venue: 'TBA',
+        description: '18 HOURS TO BUILD. 6 HOURS TO DEMO. The developer track sprint kicks off Thursday evening, pushing technical builders to create live solutions.',
+        venue: 'The Assembly',
         track: 'Dev Track',
         details: ['Hackathon rules and criteria are currently being curated'],
-        registerUrl: 'https://blockchainlautech.club/confluence2.0/register/hackathon'
+        registerUrl: '#'
       }
     ]
   },
   {
     id: 'fri',
-    date: 'Friday, Sept 25',
+    date: 'Friday, Nov 6',
     title: 'DEV TRACK CONCLUDES',
     phase: 'Confluence 2.0 (Main Conference)',
     sessions: [
@@ -127,16 +131,16 @@ const scheduleData: DayData[] = [
         time: 'All Day',
         title: 'Dev Track Concludes: Hackathon Demos & Pitching',
         description: 'Hackathon teams pitch their product prototypes before judges. (All Day: 18h building + 6h pitching).',
-        venue: 'TBA',
+        venue: 'The Assembly',
         track: 'Dev Track',
         details: ['18 Hours of building complete', '6 Hours of presentations and live demos'],
-        registerUrl: 'https://blockchainlautech.club/confluence2.0/register/demos'
+        registerUrl: '#'
       }
     ]
   },
   {
     id: 'sat',
-    date: 'Saturday, Sept 26',
+    date: 'Saturday, Nov 7',
     title: 'COMMUNITY TRACK',
     phase: 'Confluence 2.0 (Main Conference)',
     sessions: [
@@ -144,10 +148,10 @@ const scheduleData: DayData[] = [
         time: 'Full Day',
         title: 'Community Track: Community Track Culmination',
         description: 'The grand finale uniting Code, Create, and Connect with keynotes, panels, and ecosystem awards.',
-        venue: 'TBA',
+        venue: 'The Great Hall, LAUTECH, Ogbomoso',
         track: 'Community',
         details: ['Pillars convergence celebration', 'Keynote addresses & fireside chats', 'Community award recognitions'],
-        registerUrl: 'https://blockchainlautech.club/confluence2.0/register/community'
+        registerUrl: '#'
       }
     ]
   }
@@ -335,26 +339,24 @@ const Schedule = () => {
                   </div>
                 </div>
 
-                {/* Register Button (for Day 2 to Day 6, inactive) */}
                 {session.registerUrl && (
-                  <button 
-                    disabled
-                    type="button"
-                    data-register-url={session.registerUrl}
-                    className="w-full bg-white/5 text-slate-500 border border-white/10 font-bold rounded-xl text-xs py-3 text-center cursor-not-allowed transition-all duration-200 md:mt-2"
-                  >
-                    Register
-                  </button>
-
-                  // USE THIS TO ACTIVATE
-                  // <a 
-                  //   href={session.registerUrl}
-                  //   target="_blank"
-                  //   rel="noopener noreferrer"
-                  //   className="w-full bg-[#286cfd] hover:bg-blue-700 text-white font-bold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block"
-                  //   >
-                  //     Register
-                  // </a>
+                  session.title.includes('Unplugged Room') ? (
+                    <a 
+                      href="#"
+                      className="w-full bg-[#286cfd] hover:bg-blue-700 text-white font-extrabold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block uppercase tracking-wider border border-black shadow-sm"
+                    >
+                      Buy Ticket
+                    </a>
+                  ) : (
+                    <button 
+                      disabled
+                      type="button"
+                      data-register-url={session.registerUrl}
+                      className="w-full bg-white/5 text-slate-500 border border-white/10 font-bold rounded-xl text-xs py-3 text-center cursor-not-allowed transition-all duration-200 md:mt-2"
+                    >
+                      Register
+                    </button>
+                  )
                 )}
               </div>
 

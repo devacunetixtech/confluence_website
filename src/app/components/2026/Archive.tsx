@@ -110,7 +110,7 @@ const Archive = () => {
           
           <div className="pt-6 mt-6 border-t border-white/10">
             <span className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-[#facc15]">
-              September 21–26, 2026 <ExternalLink className="w-3.5 h-3.5" />
+              November 2–7, 2026 <ExternalLink className="w-3.5 h-3.5" />
             </span>
           </div>
         </div>

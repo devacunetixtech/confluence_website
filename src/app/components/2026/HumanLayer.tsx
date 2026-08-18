@@ -41,7 +41,7 @@ const HumanLayer = () => {
               </div>
               <div className="pt-4">
                 <a 
-                  href="#home"
+                  href="#"
                   className="inline-flex items-center gap-2 bg-[#ccff00] text-black hover:bg-[#b5e000] hover:scale-[1.02] transition-all px-8 py-4 rounded-full text-xs sm:text-sm font-black uppercase tracking-wider w-full justify-center border border-black neo-shadow-blue"
                 >
                   Secure your Spot <ArrowUpRight className="w-4 h-4 stroke-[2.5]" />
