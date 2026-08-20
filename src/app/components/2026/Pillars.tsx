@@ -74,7 +74,7 @@ const Pillars = () => {
   const activePillar = pillarsData[activeTab];
 
   return (
-    <section id='pillars' className='pt-6 pb-12 px-6 md:px-20 max-w-8xl mx-auto relative z-10'>
+    <section id='pillars' className='pt-6 pb-12 px-6 md:px-20 max-w-7xl mx-auto relative z-10'>
       
       {/* Badge */}
       <div className="flex justify-center mb-6" data-aos="fade-up">
