@@ -50,7 +50,7 @@ const scheduleData: DayData[] = [
         venue: 'Maracana, Ogbomoso',
         track: 'Human Layer',
         details: ['Football', 'Tennis', 'Games'],
-        registerUrl: '#'
+        registerUrl: 'https://localhost:3000/register/the-human-layer-unplugged-room-9de3'
       },
       {
         time: '3:00 PM WAT',
@@ -59,7 +59,7 @@ const scheduleData: DayData[] = [
         venue: 'TBA',
         track: 'Human Layer',
         details: ['Icebreakers', 'Girls Conversation', 'Games'],
-        registerUrl: '#'
+        registerUrl: 'https://localhost:3000/register/the-human-layer-unplugged-room-9de3'
       }
     ]
   },
