@@ -17,9 +17,9 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
   const isRegisterOpen = propsRegisterOpen !== undefined ? propsRegisterOpen : localRegisterOpen;
   const setIsRegisterOpen = propsSetRegisterOpen !== undefined ? propsSetRegisterOpen : setLocalRegisterOpen;
 
-  const communityRegUrl = process.env.NEXT_PUBLIC_COMMUNITY_REGISTRATION_URL || "#";
-  const developerRegUrl = process.env.NEXT_PUBLIC_DEVELOPER_REGISTRATION_URL || "#";
-  const founderRegUrl = process.env.NEXT_PUBLIC_FOUNDER_REGISTRATION_URL || "#";
+  const communityRegUrl = "#";
+  const developerRegUrl = "https://www.crenelle.org/register/developers-track-confluence-2-0-f637";
+  const founderRegUrl = "https://www.crenelle.org/register/the-confluence-fellowship-founders-track-4cdf";
 
   const navLinks = [
     { label: "About", href: "#about" },
