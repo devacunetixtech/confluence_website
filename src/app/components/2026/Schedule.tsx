@@ -44,13 +44,22 @@ const scheduleData: DayData[] = [
     phase: 'Road to Confluence',
     sessions: [
       {
-        time: '3:00 PM WAT',
+        time: '7:00 AM WAT',
         title: 'The Human Layer: Novelty Sports & Games',
         description: 'Friendly competitive sports including football, tennis, and games.',
         venue: 'Maracana, Ogbomoso',
         track: 'Human Layer',
         details: ['Football', 'Tennis', 'Games'],
-        registerUrl: '#'
+        registerUrl: 'https://confluence-sandbox.vercel.app/'
+      },
+      {
+        time: '3:00 PM WAT',
+        title: 'The Human Layer: Female Guild Picnic',
+        description: 'Friendly competitive sports including football, tennis, and games.',
+        venue: 'TBA',
+        track: 'Human Layer',
+        details: ['Icebreakers', 'Girls Conversation', 'Games'],
+        registerUrl: 'https://confluence-sandbox.vercel.app/'
       }
     ]
   },
@@ -74,7 +83,7 @@ const scheduleData: DayData[] = [
           'Story theme: “A student navigating tech in Nigeria”',
           'Story theme: “A creative lost in the noise of Web3”'
         ],
-        registerUrl: '#'
+        registerUrl: 'https://www.crenelle.org/register/the-human-layer-unplugged-room-9de3'
       },
       {
         time: 'Evening (Expected 3:00–4:00 PM)',
@@ -83,7 +92,7 @@ const scheduleData: DayData[] = [
         venue: 'Closed Door',
         track: 'Human Layer',
         details: ['Soft music & ambient talks', 'Intimate creative studio vibes'],
-        registerUrl: '#'
+        registerUrl: 'https://www.crenelle.org/register/the-human-layer-unplugged-room-9de3'
       }
     ]
   },
@@ -113,7 +122,7 @@ const scheduleData: DayData[] = [
           'Building teams',
           'Going from MVP to something people actually want'
         ],
-        registerUrl: '#'
+        registerUrl: 'https://www.crenelle.org/register/the-confluence-fellowship-founders-track-4cdf'
       },
       {
         time: '5:00 PM',
@@ -122,7 +131,7 @@ const scheduleData: DayData[] = [
         venue: 'The Assembly',
         track: 'Dev Track',
         details: ['Hackathon rules and criteria are currently being curated'],
-        registerUrl: '#'
+        registerUrl: 'https://www.crenelle.org/register/developers-track-confluence-2-0-f637'
       }
     ]
   },
@@ -139,7 +148,7 @@ const scheduleData: DayData[] = [
         venue: 'The Assembly',
         track: 'Dev Track',
         details: ['18 Hours of building complete', '6 Hours of presentations and live demos'],
-        registerUrl: '#'
+        registerUrl: 'https://www.crenelle.org/register/developers-track-confluence-2-0-f637'
       }
     ]
   },
@@ -347,11 +356,13 @@ const Schedule = () => {
                   </div>
                 </div>
 
-                {session.registerUrl && (
+                {session.registerUrl && session.registerUrl !== '#' && (
                   (session.title.includes('Unplugged Room') || session.title.includes('Create with Purpose')) ? (
                     <div className="w-full flex flex-col gap-1.5 md:mt-2">
-                      <a 
-                        href="#"
+                      <a
+                        href={session.registerUrl}
+                        target="_blank"
+                        rel="noreferrer noopener"
                         className="w-full bg-[#286cfd] hover:bg-blue-700 text-white font-extrabold rounded-xl text-xs py-3 text-center transition-all duration-200 block uppercase tracking-wider border border-black shadow-sm"
                       >
                         Buy Ticket
@@ -361,23 +372,23 @@ const Schedule = () => {
                       </span>
                     </div>
                   ) : session.title.includes('Confluence Fellowship') ? (
-                    <button 
-                      disabled
-                      type="button"
-                      data-register-url={session.registerUrl}
-                      className="w-full bg-white/5 text-slate-500 border border-white/10 font-bold rounded-xl text-xs py-3 text-center cursor-not-allowed transition-all duration-200 md:mt-2"
+                    <a
+                      href={session.registerUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="w-full bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 font-bold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block"
                     >
                       Apply
-                    </button>
+                    </a>
                   ) : (
-                    <button 
-                      disabled
-                      type="button"
-                      data-register-url={session.registerUrl}
-                      className="w-full bg-white/5 text-slate-500 border border-white/10 font-bold rounded-xl text-xs py-3 text-center cursor-not-allowed transition-all duration-200 md:mt-2"
+                    <a
+                      href={session.registerUrl}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      className="w-full bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 font-bold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block"
                     >
                       Register
-                    </button>
+                    </a>
                   )
                 )}
               </div>
