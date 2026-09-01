@@ -188,7 +188,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
                         Community Track (Main Event)
                       </h4>
                       <span className="bg-[#ccff00] text-black text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
-                        Main Event
+                        Connect
                       </span>
                     </div>
                     <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mt-1">

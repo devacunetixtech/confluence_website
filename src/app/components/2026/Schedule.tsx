@@ -55,7 +55,7 @@ const scheduleData: DayData[] = [
       {
         time: '3:00 PM WAT',
         title: 'The Human Layer: Female Guild Picnic',
-        description: 'Friendly competitive sports including football, tennis, and games.',
+        description: 'A exclusive outdoor picnic — a safe space to unwind, connect, and have fun. Expect warm icebreakers, candid girl conversations, and lighthearted games in a welcoming atmosphere.',
         venue: 'TBA',
         track: 'Human Layer',
         details: ['Icebreakers', 'Girls Conversation', 'Games'],
