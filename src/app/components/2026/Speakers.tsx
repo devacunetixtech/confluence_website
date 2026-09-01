@@ -1,14 +1,15 @@
 'use client'
 
 import React from 'react'
+import Image from 'next/image'
 import SpeakersCarousel from './SpeakersCarousel'
 import { Mail, Handshake } from 'lucide-react'
 
 const Speakers = () => {
   const tiers = [
-    { name: "Platinum Sponsors", description: "Headline branding, hackathon naming rights, keynotes.", slots: 2, cols: "grid-cols-1 sm:grid-cols-2", height: "h-24" },
-    { name: "Gold Sponsors", description: "Track sponsorship, custom workshops, talent access.", slots: 3, cols: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3", height: "h-20" },
-    { name: "Silver Sponsors", description: "Exhibition booth, brand merchandise placement.", slots: 4, cols: "grid-cols-2 sm:grid-cols-4", height: "h-16" }
+    { name: "Platinum Sponsors", description: "Headline branding, hackathon naming rights, keynotes.", slots: 2, cols: "grid-cols-1 sm:grid-cols-2", height: "h-24", sponsors: [] as string[] },
+    { name: "Gold Sponsors", description: "Track sponsorship, custom workshops, talent access.", slots: 3, cols: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3", height: "h-20", sponsors: [] as string[] },
+    { name: "Bronze Sponsors", description: "Exhibition booth, brand merchandise placement.", slots: 4, cols: "grid-cols-2 sm:grid-cols-4", height: "h-16", sponsors: ["/sponsor2.png"] }
   ];
 
   const partnerSlots = 6;
@@ -67,16 +68,32 @@ const Speakers = () => {
                 </p>
               </div>
               <div className={`grid ${tier.cols} gap-4`}>
-                {Array.from({ length: tier.slots }).map((_, idx) => (
-                  <div 
-                    key={idx}
-                    className={`border border-dashed border-white/10 rounded-2xl flex items-center justify-center ${tier.height} bg-black/40 hover:bg-black/60 transition-colors duration-300 group`}
-                  >
-                    <span className="text-xs font-bold text-slate-500 uppercase tracking-wider group-hover:text-[#ccff00] transition-colors duration-300">
-                      Sponsor Slot
-                    </span>
-                  </div>
-                ))}
+                {Array.from({ length: tier.slots }).map((_, idx) => {
+                  const logoSrc = tier.sponsors[idx];
+                  return logoSrc ? (
+                    <div
+                      key={idx}
+                      className={`border border-white/20 rounded-2xl flex items-center justify-center ${tier.height} bg-black/40 px-4`}
+                    >
+                      <Image
+                        src={logoSrc}
+                        alt="Bronze Sponsor"
+                        width={120}
+                        height={48}
+                        className="object-contain max-h-full w-auto"
+                      />
+                    </div>
+                  ) : (
+                    <div 
+                      key={idx}
+                      className={`border border-dashed border-white/10 rounded-2xl flex items-center justify-center ${tier.height} bg-black/40 hover:bg-black/60 transition-colors duration-300 group`}
+                    >
+                      <span className="text-xs font-bold text-slate-500 uppercase tracking-wider group-hover:text-[#ccff00] transition-colors duration-300">
+                        Sponsor Slot
+                      </span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}
