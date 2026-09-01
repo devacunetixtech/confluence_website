@@ -9,8 +9,9 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
-
+questions.txt
 confluence-2.0.md
+faq.txt
 # testing
 /coverage
 
