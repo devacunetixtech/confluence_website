@@ -20,6 +20,8 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
   const communityRegUrl = "#";
   const developerRegUrl = "https://www.crenelle.org/register/developers-track-confluence-2-0-f637";
   const founderRegUrl = "https://www.crenelle.org/register/the-confluence-fellowship-founders-track-4cdf";
+  const humanLayerRegUrl = "https://confluence-sandbox.vercel.app/";
+  const femaleGuildRegUrl = "https://confluence-sandbox.vercel.app/";
 
   const navLinks = [
     { label: "About", href: "#about" },
@@ -246,6 +248,64 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
                       </p>
                     </div>
                   </a>
+                </div>
+
+                {/* Side Events */}
+                <div className="mt-2">
+                  <p className="text-[9px] uppercase font-extrabold tracking-widest text-slate-500 mb-3 flex items-center gap-2">
+                    <span className="flex-1 h-px bg-white/10" />
+                    Side Events
+                    <span className="flex-1 h-px bg-white/10" />
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    {/* The Human Layer: Novelty Sports & Games */}
+                    <a
+                      href={humanLayerRegUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsRegisterOpen(false)}
+                      className="bg-[#1A1500]/60 border border-white/10 hover:border-[#facc15] hover:bg-[#1F1A00] p-4 rounded-2xl flex flex-col justify-between transition-all duration-300 cursor-pointer group relative overflow-hidden text-left"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#facc15]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      <div className="relative z-10">
+                        <div className="flex justify-between items-start mb-1.5">
+                          <h4 className="text-xs font-black text-white group-hover:text-[#facc15] transition-colors uppercase tracking-tight leading-tight pr-2">
+                            The Human Layer
+                          </h4>
+                          <span className="bg-[#facc15]/20 text-[#facc15] border border-[#facc15]/30 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase shrink-0">
+                            Sports
+                          </span>
+                        </div>
+                        <p className="text-slate-400 text-[10px] leading-relaxed">
+                          Novelty sports &amp; games. Football, tennis, and more.
+                        </p>
+                      </div>
+                    </a>
+
+                    {/* Female Guild Picnic */}
+                    <a
+                      href={femaleGuildRegUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsRegisterOpen(false)}
+                      className="bg-[#1A0A14]/60 border border-white/10 hover:border-[#f9a8d4] hover:bg-[#200D18] p-4 rounded-2xl flex flex-col justify-between transition-all duration-300 cursor-pointer group relative overflow-hidden text-left"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#f9a8d4]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                      <div className="relative z-10">
+                        <div className="flex justify-between items-start mb-1.5">
+                          <h4 className="text-xs font-black text-white group-hover:text-[#f9a8d4] transition-colors uppercase tracking-tight leading-tight pr-2">
+                            Female Guild Picnic
+                          </h4>
+                          <span className="bg-[#f9a8d4]/20 text-[#f9a8d4] border border-[#f9a8d4]/30 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase shrink-0">
+                            Picnic
+                          </span>
+                        </div>
+                        <p className="text-slate-400 text-[10px] leading-relaxed">
+                          Icebreakers, candid girl conversations &amp; games.
+                        </p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
 
