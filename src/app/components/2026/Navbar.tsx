@@ -293,9 +293,6 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
                           <h4 className="text-xs font-black text-white group-hover:text-[#f9a8d4] transition-colors uppercase tracking-tight leading-tight pr-2">
                             Female Guild Picnic
                           </h4>
-                          <span className="bg-[#f9a8d4]/20 text-[#f9a8d4] border border-[#f9a8d4]/30 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase shrink-0">
-                            Picnic
-                          </span>
                         </div>
                         <p className="text-slate-400 text-[10px] leading-relaxed">
                           Icebreakers, candid girl conversations &amp; games.
