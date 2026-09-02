@@ -78,7 +78,7 @@ const Home = () => {
             'bg-[#286cfd] animate-pulse'
           }`}></span>
           <span className="text-white font-extrabold text-[10px] sm:text-xs uppercase tracking-widest text-center leading-normal">
-            Blockchain LAUTECH Presents: The Largest Student-led Blockchain Conference in Africa
+            Blockchain LAUTECH Presents: <br /> The Largest Student-led Blockchain Conference in Africa
           </span>
         </div>
 

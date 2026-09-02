@@ -50,13 +50,13 @@ const Page = () => {
       <Schedule2026 />
 
       {/* 5. The Human Layer Featured Story (Dark Theme) */}
-      <HumanLayer2026 />
-      {/* 6. Why Ogbomoso Section (Video & Copy) */}
-      <Why2026 />
-    
+      <HumanLayer2026 />    
       
-      {/* 7. Speakers Carousel & Sponsors & Partners grids */}
+      {/* 6. Speakers Carousel & Sponsors & Partners grids */}
       <Speakers2026 />
+
+            {/* 7. Why Ogbomoso Section (Video & Copy) */}
+      <Why2026 />
       
       {/* 8. The Chronicles (Confluence 1.0 / 2025 Archive) */}
       <Archive2026 />
