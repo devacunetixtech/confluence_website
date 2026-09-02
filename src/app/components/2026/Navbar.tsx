@@ -252,7 +252,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
 
                 {/* Side Events */}
                 <div className="mt-2">
-                  <p className="text-[9px] uppercase font-extrabold tracking-widest text-slate-500 mb-3 flex items-center gap-2">
+                  <p className="text-xs uppercase font-extrabold tracking-widest text-slate-500 mb-3 flex items-center gap-2">
                     <span className="flex-1 h-px bg-white/10" />
                     Side Events
                     <span className="flex-1 h-px bg-white/10" />
@@ -272,9 +272,6 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
                           <h4 className="text-xs font-black text-white group-hover:text-[#facc15] transition-colors uppercase tracking-tight leading-tight pr-2">
                             The Human Layer
                           </h4>
-                          <span className="bg-[#facc15]/20 text-[#facc15] border border-[#facc15]/30 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase shrink-0">
-                            Sports
-                          </span>
                         </div>
                         <p className="text-slate-400 text-[10px] leading-relaxed">
                           Novelty sports &amp; games. Football, tennis, and more.

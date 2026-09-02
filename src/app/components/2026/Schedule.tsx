@@ -50,7 +50,6 @@ const scheduleData: DayData[] = [
         venue: 'Maracana, Ogbomoso',
         track: 'Human Layer',
         details: ['Football', 'Tennis', 'Games'],
-        registerUrl: 'https://confluence-sandbox.vercel.app/'
       },
       {
         time: '3:00 PM WAT',
@@ -162,10 +161,10 @@ const scheduleData: DayData[] = [
         time: 'Full Day',
         title: 'Community Track: Community Track Culmination',
         description: 'The grand finale uniting Code, Create, and Connect with keynotes, panels, and ecosystem awards.',
-        venue: 'The Great Hall, LAUTECH, Ogbomoso',
+        venue: 'TBA',
         track: 'Community',
         details: ['Pillars convergence celebration', 'Keynote addresses & fireside chats', 'Community award recognitions'],
-        registerUrl: '#'
+        registerUrl: 'https://www.crenelle.org/register/community-track-confluence-2-0-f637'
       }
     ]
   }
@@ -376,7 +375,7 @@ const Schedule = () => {
                       href={session.registerUrl}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="w-full bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 font-bold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block"
+                      className="w-full bg-[#286cfd] hover:bg-blue-700 text-white border border-black font-bold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block uppercase tracking-wider shadow-sm"
                     >
                       Apply
                     </a>
@@ -385,7 +384,7 @@ const Schedule = () => {
                       href={session.registerUrl}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="w-full bg-white/5 hover:bg-white/10 text-slate-200 border border-white/10 font-bold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block"
+                      className="w-full bg-[#ccff00] hover:bg-[#b5e000] text-black border border-black font-extrabold rounded-xl text-xs py-3 text-center transition-all duration-200 md:mt-2 block uppercase tracking-wider shadow-sm"
                     >
                       Register
                     </a>

@@ -1,0 +1,150 @@
+// ─────────────────────────────────────────────
+// CONFLUENCE 2.0 (2026) — Data Constants
+// ─────────────────────────────────────────────
+
+// ── Speakers ─────────────────────────────────
+
+export interface Speaker {
+  id: number;
+  name: string;
+  /** One or more role / title lines */
+  title: string[];
+  image: string;
+  /** Track this speaker is associated with */
+  track: string;
+  /** Short topic / talk description */
+  topic: string;
+  /** Whether this is a confirmed speaker or a mystery placeholder */
+  confirmed: boolean;
+}
+
+export const speakers: Speaker[] = [
+  // ── Confirmed speakers (shown first in carousel) ──
+  {
+    id: 1,
+    name: "John ADEKUNJO",
+    title: [
+      "Convener, Confluence",
+      "Co-founder, Blockchain LAUTECH.",
+    ],
+    image: "/johnadek.jpg",
+    track: "KEYNOTE",
+    topic: "Web3 & Emerging Technologies",
+    confirmed: true,
+  },
+  {
+    id: 2,
+    name: "Thelma OPURUM",
+    title: ["Founder, Blockchain Lautech."],
+    image: "/thelma.jpg",
+    track: "CREATE TRACK",
+    topic: "Design & Creative Innovation",
+    confirmed: true,
+  },
+  {
+    id: 3,
+    name: "Blessing OLUWABAMIDELE",
+    title: ["Co-founder, Blockchain Lautech."],
+    image: "/missblessing.jpg",
+    track: "CONNECT TRACK",
+    topic: "Community & Ecosystem Growth",
+    confirmed: true,
+  },
+
+  // ── Mystery / TBA speakers ──
+  {
+    id: 101,
+    name: "[ Mystery Speaker ]",
+    title: ["TBA"],
+    image: "",
+    track: "CODE TRACK",
+    topic: "Protocol Infrastructure & Dev Tools",
+    confirmed: false,
+  },
+  {
+    id: 102,
+    name: "[ Mystery Speaker ]",
+    title: ["TBA"],
+    image: "",
+    track: "FOUNDERS TRACK",
+    topic: "Venture Capital & Product-Market Scale",
+    confirmed: false,
+  },
+];
+
+// ── Sponsors ──────────────────────────────────
+
+export interface SponsorTier {
+  name: string;
+  description: string;
+  slots: number;
+  /** Tailwind grid-cols class string */
+  cols: string;
+  /** Tailwind height class string for each sponsor card */
+  height: string;
+  sponsors: SponsorLogo[];
+}
+
+export interface SponsorLogo {
+  src: string;
+  alt: string;
+  width?: number;
+  href?: string;
+}
+
+export const sponsorTiers: SponsorTier[] = [
+  {
+    name: "Platinum Sponsors",
+    description: "Headline branding, hackathon naming rights, keynotes.",
+    slots: 2,
+    cols: "grid-cols-1 sm:grid-cols-2",
+    height: "h-24",
+    sponsors: [
+      {
+        src: "/Candao2026.png",
+        alt: "Candao",
+        width: 160,
+        href: "https://candao.io",
+      },
+    ],
+  },
+  {
+    name: "Gold Sponsors",
+    description: "Track sponsorship, custom workshops, talent access.",
+    slots: 3,
+    cols: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3",
+    height: "h-20",
+    sponsors: [],
+  },
+  {
+    name: "Bronze Sponsors",
+    description: "Exhibition booth, brand merchandise placement.",
+    slots: 4,
+    cols: "grid-cols-2 sm:grid-cols-4",
+    height: "h-16",
+    sponsors: [
+      {
+        src: "/FaucetDrops2026.png",
+        alt: "FaucetDrops",
+        width: 120,
+      },
+    ],
+  },
+];
+
+// ── Partners ──────────────────────────────────
+
+export interface PartnerLogo {
+  src: string;
+  alt: string;
+  width?: number;
+  href?: string;
+}
+
+export const partnerLogos: PartnerLogo[] = [
+  {
+    src: "/web3ogbomoso2026.png",
+    alt: "Web3 Ogbomoso",
+    width: 100,
+  },
+];

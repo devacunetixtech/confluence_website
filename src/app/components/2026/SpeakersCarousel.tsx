@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -8,13 +9,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { ChevronLeft, ChevronRight, HelpCircle } from "lucide-react";
 import type { Swiper as SwiperType } from "swiper";
+import { speakers } from "@/app/constants/2026";
 
-const placeholders = [
-  { id: 1, name: "[ Mystery Speaker ]", track: "CODE TRACK", topic: "Protocol Infrastructure & Dev Tools" },
-  { id: 2, name: "[ Mystery Speaker ]", track: "CREATE TRACK", topic: "Web3 UX & Creative Operations" },
-  { id: 3, name: "[ Mystery Speaker ]", track: "CONNECT TRACK", topic: "Grassroots Community Ecosystems" },
-  { id: 4, name: "[ Mystery Speaker ]", track: "FOUNDERS TRACK", topic: "Venture Capital & Product-Market Scale" }
-];
+const confirmedSpeakers = speakers.filter((s) => s.confirmed);
+const placeholderSpeakers = speakers.filter((s) => !s.confirmed);
+
 
 export default function SpeakersCarousel() {
   const swiperRef = useRef<SwiperType | null>(null);
@@ -73,34 +72,75 @@ export default function SpeakersCarousel() {
           }}
           className="w-full py-8 overflow-hidden"
         >
-          {placeholders.map((speaker) => (
+          {/* Confirmed speakers */}
+          {confirmedSpeakers.map((speaker) => (
             <SwiperSlide key={speaker.id} className="h-full">
-              <div className="group bg-white hover:bg-slate-50 border border-slate-100 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between h-[380px] transform hover:-translate-y-2 relative overflow-hidden">
-                
-                {/* Neon-like top border line visible on hover */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-[#286cfd] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="group bg-black/40 hover:bg-black/60 border border-white/10 hover:border-[#ccff00]/50 rounded-3xl p-6 shadow-sm hover:shadow-[0_0_30px_rgba(204,255,0,0.12)] transition-all duration-300 flex flex-col justify-between h-[380px] transform hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm">
+
+                {/* Gradient top bar */}
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#286cfd] to-[#ccff00] opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="space-y-4">
-                  {/* Category label */}
-                  <span className="inline-block bg-blue-50 text-[#286cfd] text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
+                  {/* Track label */}
+                  <span className="inline-flex items-center gap-1.5 bg-[#ccff00]/10 text-[#ccff00] border border-[#ccff00]/20 text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
                     {speaker.track}
                   </span>
-                  
-                  {/* Giant mysterious question mark block */}
-                  <div className="aspect-video w-full rounded-2xl bg-slate-900 flex items-center justify-center relative overflow-hidden shadow-inner group-hover:bg-[#0C1246] transition-colors duration-300">
-                    <span className="text-4xl sm:text-5xl font-black text-white/20 tracking-widest group-hover:text-white/40 group-hover:scale-110 transition-all duration-500">
-                      ???
-                    </span>
-                    <HelpCircle className="absolute bottom-4 right-4 w-5 h-5 text-white/10 group-hover:text-white/20 transition-colors" />
+
+                  {/* Speaker photo */}
+                  <div className="aspect-video w-full rounded-2xl overflow-hidden relative shadow-inner border border-white/5">
+                    <Image
+                      src={speaker.image}
+                      alt={speaker.name}
+                      fill
+                      className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* Overlay gradient at bottom */}
+                    <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/60 to-transparent" />
                   </div>
                 </div>
 
                 <div>
-                  <h4 className="text-lg font-black text-[#0C1246] uppercase tracking-tight mb-1 group-hover:text-[#286cfd] transition-colors duration-300">
+                  <h4 className="text-lg font-black text-white uppercase tracking-tight mb-1 group-hover:text-[#ccff00] transition-colors duration-300">
                     {speaker.name}
                   </h4>
-                  <p className="text-slate-500 font-bold text-xs uppercase tracking-wider group-hover:text-[#286cfd] transition-colors duration-300">
-                    {speaker.topic}
+                  <p className="text-slate-400 font-bold text-xs uppercase tracking-wider group-hover:text-slate-300 transition-colors duration-300">
+                    {speaker.title.join(' · ')}
+                  </p>
+                </div>
+
+              </div>
+            </SwiperSlide>
+          ))}
+
+          {/* Mystery placeholder speakers */}
+          {placeholderSpeakers.map((speaker) => (
+            <SwiperSlide key={speaker.id} className="h-full">
+              <div className="group bg-black/40 hover:bg-black/60 border border-white/10 hover:border-[#286cfd]/50 rounded-3xl p-6 shadow-sm hover:shadow-[0_0_30px_rgba(40,108,253,0.15)] transition-all duration-300 flex flex-col justify-between h-[380px] transform hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm">
+                
+                {/* Neon-like top border line always present, brightens on hover */}
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#286cfd] to-[#ccff00] opacity-30 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                <div className="space-y-4">
+                  {/* Category label */}
+                  <span className="inline-flex items-center gap-1.5 bg-[#286cfd]/10 text-[#286cfd] border border-[#286cfd]/20 text-[10px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
+                    {speaker.track}
+                  </span>
+                  
+                  {/* Giant mysterious question mark block */}
+                  <div className="aspect-video w-full rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center relative overflow-hidden shadow-inner group-hover:bg-[#286cfd]/5 transition-colors duration-300">
+                    <span className="text-4xl sm:text-5xl font-black text-white/10 tracking-widest group-hover:text-[#ccff00]/30 group-hover:scale-110 transition-all duration-500">
+                      ???
+                    </span>
+                    <HelpCircle className="absolute bottom-4 right-4 w-5 h-5 text-white/10 group-hover:text-[#ccff00]/30 transition-colors" />
+                  </div>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-black text-white uppercase tracking-tight mb-1 group-hover:text-[#ccff00] transition-colors duration-300">
+                    {speaker.name}
+                  </h4>
+                  <p className="text-slate-400 font-bold text-xs uppercase tracking-wider group-hover:text-slate-300 transition-colors duration-300">
+                    {speaker.title.join(' · ')}
                   </p>
                 </div>
 
@@ -112,17 +152,17 @@ export default function SpeakersCarousel() {
         {/* Navigation arrows (hidden on mobile, visible on tablet/desktop) */}
         <div className="hidden sm:block">
           <button
-            className="speaker-prev-btn absolute left-0 top-1/2 -translate-y-1/2 bg-white hover:bg-slate-50 border border-slate-100 p-3 rounded-full shadow-md transition-all duration-300 cursor-pointer z-10"
+            className="speaker-prev-btn absolute left-0 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 border border-white/10 hover:border-[#286cfd]/50 p-3 rounded-full shadow-md transition-all duration-300 cursor-pointer z-10 backdrop-blur-sm"
             aria-label="Previous speaker"
           >
-            <ChevronLeft className="w-5 h-5 text-slate-700" />
+            <ChevronLeft className="w-5 h-5 text-slate-300" />
           </button>
           
           <button
-            className="speaker-next-btn absolute right-0 top-1/2 -translate-y-1/2 bg-white hover:bg-slate-50 border border-slate-100 p-3 rounded-full shadow-md transition-all duration-300 cursor-pointer z-10"
+            className="speaker-next-btn absolute right-0 top-1/2 -translate-y-1/2 bg-black/60 hover:bg-black/80 border border-white/10 hover:border-[#286cfd]/50 p-3 rounded-full shadow-md transition-all duration-300 cursor-pointer z-10 backdrop-blur-sm"
             aria-label="Next speaker"
           >
-            <ChevronRight className="w-5 h-5 text-slate-700" />
+            <ChevronRight className="w-5 h-5 text-slate-300" />
           </button>
         </div>
 
@@ -132,12 +172,12 @@ export default function SpeakersCarousel() {
         {/* CSS Patch for swiper pagination */}
         <style>{`
           .speaker-pagination .swiper-pagination-bullet {
-            background-color: #cbd5e1; /* slate-300 */
+            background-color: rgba(255,255,255,0.2);
             opacity: 1;
             transition: all 0.3s;
           }
           .speaker-pagination .swiper-pagination-bullet-active {
-            background-color: #286cfd; /* conblue */
+            background-color: #ccff00;
             width: 24px;
             border-radius: 9999px;
           }
