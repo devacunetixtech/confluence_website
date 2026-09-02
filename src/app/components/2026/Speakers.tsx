@@ -70,9 +70,10 @@ const Speakers = () => {
                       <Image
                         src={logo.src}
                         alt={logo.alt}
-                        width={logo.width ?? 120}
-                        height={48}
-                        className="object-contain max-h-full w-auto"
+                        width={logo.width}
+                        height={logo.height}
+                        className="object-contain w-auto"
+                        style={{ maxHeight: logo.height ? `${logo.height}px` : '48px' }}
                       />
                     </div>
                   ) : (
@@ -144,7 +145,7 @@ const Speakers = () => {
                     src={logo.src}
                     alt={logo.alt}
                     width={logo.width ?? 100}
-                    height={40}
+                    height={logo.height ?? 40}
                     className="object-contain max-h-full w-auto"
                   />
                 </div>

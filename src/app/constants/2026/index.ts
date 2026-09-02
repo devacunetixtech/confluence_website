@@ -108,6 +108,7 @@ export interface SponsorLogo {
   src: string;
   alt: string;
   width?: number;
+  height?: number;
   href?: string;
 }
 
@@ -120,9 +121,10 @@ export const sponsorTiers: SponsorTier[] = [
     height: "h-24",
     sponsors: [
       {
-        src: "/Candao2026.png",
+        src: "/candao_full_white.svg",
         alt: "Candao",
-        width: 160,
+        width: 200,
+        height: 80,
         href: "https://candao.io",
       },
     ],
@@ -146,6 +148,7 @@ export const sponsorTiers: SponsorTier[] = [
         src: "/FaucetDrops2026.png",
         alt: "FaucetDrops",
         width: 120,
+        height: 48,
       },
     ],
   },
@@ -157,6 +160,7 @@ export interface PartnerLogo {
   src: string;
   alt: string;
   width?: number;
+  height?: number;
   href?: string;
 }
 
@@ -165,5 +169,6 @@ export const partnerLogos: PartnerLogo[] = [
     src: "/web3ogbomoso2026.png",
     alt: "Web3 Ogbomoso",
     width: 100,
+    height: 40,
   },
 ];
