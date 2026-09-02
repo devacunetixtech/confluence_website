@@ -4,15 +4,10 @@ import React from 'react'
 import Image from 'next/image'
 import SpeakersCarousel from './SpeakersCarousel'
 import { Mail, Handshake } from 'lucide-react'
+import { sponsorTiers, partnerLogos } from '@/app/constants/2026'
 
 const Speakers = () => {
-  const tiers = [
-    { name: "Platinum Sponsors", description: "Headline branding, hackathon naming rights, keynotes.", slots: 2, cols: "grid-cols-1 sm:grid-cols-2", height: "h-24", sponsors: [] as string[] },
-    { name: "Gold Sponsors", description: "Track sponsorship, custom workshops, talent access.", slots: 3, cols: "grid-cols-1 sm:grid-cols-2 md:grid-cols-3", height: "h-20", sponsors: [] as string[] },
-    { name: "Bronze Sponsors", description: "Exhibition booth, brand merchandise placement.", slots: 4, cols: "grid-cols-2 sm:grid-cols-4", height: "h-16", sponsors: ["/sponsor2.png"] }
-  ];
-
-  const partnerSlots = 6;
+  const PARTNER_SLOTS = 6;
 
   return (
     <div id="speakers-partners" className="space-y-16 md:space-y-24 pt-8 pb-8 px-6 md:px-20 max-w-7xl mx-auto overflow-hidden w-full">
@@ -50,14 +45,11 @@ const Speakers = () => {
           <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
             Event Sponsors
           </h3>
-          <p className="text-[#ccff00] text-sm font-bold uppercase tracking-widest">
-            Coming Soon!!
-          </p>
         </div>
 
         {/* Sponsor Tiers Grid */}
         <div className="space-y-8 max-w-4xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-          {tiers.map((tier) => (
+          {sponsorTiers.map((tier) => (
             <div key={tier.name} className="space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-white/10 pb-2 gap-1.5">
                 <h4 className="text-sm font-black uppercase tracking-widest text-[#286cfd]">
@@ -69,16 +61,16 @@ const Speakers = () => {
               </div>
               <div className={`grid ${tier.cols} gap-4`}>
                 {Array.from({ length: tier.slots }).map((_, idx) => {
-                  const logoSrc = tier.sponsors[idx];
-                  return logoSrc ? (
+                  const logo = tier.sponsors[idx];
+                  return logo ? (
                     <div
                       key={idx}
                       className={`border border-white/20 rounded-2xl flex items-center justify-center ${tier.height} bg-black/40 px-4`}
                     >
                       <Image
-                        src={logoSrc}
-                        alt="Bronze Sponsor"
-                        width={120}
+                        src={logo.src}
+                        alt={logo.alt}
+                        width={logo.width ?? 120}
                         height={48}
                         className="object-contain max-h-full w-auto"
                       />
@@ -128,9 +120,6 @@ const Speakers = () => {
           <h3 className="text-3xl md:text-5xl font-black uppercase tracking-tight text-white">
             Event Partners
           </h3>
-          <p className="text-[#ccff00] text-sm font-bold uppercase tracking-widest">
-            Coming Soon!!
-          </p>
         </div>
 
         {/* Partners Grid */}
@@ -144,16 +133,32 @@ const Speakers = () => {
             </p>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
-            {Array.from({ length: partnerSlots }).map((_, idx) => (
-              <div 
-                key={idx}
-                className="border border-dashed border-white/10 rounded-xl h-16 bg-black/40 hover:bg-black/60 transition-colors duration-300 flex items-center justify-center group"
-              >
-                <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest group-hover:text-[#ccff00] transition-colors duration-300">
-                  Partner Slot
-                </span>
-              </div>
-            ))}
+            {Array.from({ length: PARTNER_SLOTS }).map((_, idx) => {
+              const logo = partnerLogos[idx];
+              return logo ? (
+                <div
+                  key={idx}
+                  className="border border-white/20 rounded-xl h-16 bg-black/40 flex items-center justify-center px-3"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={logo.width ?? 100}
+                    height={40}
+                    className="object-contain max-h-full w-auto"
+                  />
+                </div>
+              ) : (
+                <div 
+                  key={idx}
+                  className="border border-dashed border-white/10 rounded-xl h-16 bg-black/40 hover:bg-black/60 transition-colors duration-300 flex items-center justify-center group"
+                >
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest group-hover:text-[#ccff00] transition-colors duration-300">
+                    Partner Slot
+                  </span>
+                </div>
+              );
+            })}
           </div>
 
           {/* Become a partner call-to-action */}
