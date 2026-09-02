@@ -161,7 +161,7 @@ const scheduleData: DayData[] = [
         time: 'Full Day',
         title: 'Community Track: Community Track Culmination',
         description: 'The grand finale uniting Code, Create, and Connect with keynotes, panels, and ecosystem awards.',
-        venue: 'The Great Hall, LAUTECH, Ogbomoso',
+        venue: 'TBA',
         track: 'Community',
         details: ['Pillars convergence celebration', 'Keynote addresses & fireside chats', 'Community award recognitions'],
         registerUrl: 'https://www.crenelle.org/register/community-track-confluence-2-0-f637'
