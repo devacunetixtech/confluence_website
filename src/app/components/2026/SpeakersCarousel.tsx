@@ -75,7 +75,7 @@ export default function SpeakersCarousel() {
           {/* Confirmed speakers */}
           {confirmedSpeakers.map((speaker) => (
             <SwiperSlide key={speaker.id} className="h-full">
-              <div className="group bg-black/40 hover:bg-black/60 border border-white/10 hover:border-[#ccff00]/50 rounded-3xl p-6 shadow-sm hover:shadow-[0_0_30px_rgba(204,255,0,0.12)] transition-all duration-300 flex flex-col justify-between h-[380px] transform hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm">
+              <div className="group bg-black/40 hover:bg-black/60 border border-white/10 hover:border-[#ccff00]/50 rounded-3xl p-6 shadow-sm hover:shadow-[0_0_30px_rgba(204,255,0,0.12)] transition-all duration-300 flex flex-col justify-between h-[420px] transform hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm">
 
                 {/* Gradient top bar */}
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#286cfd] to-[#ccff00] opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -87,7 +87,7 @@ export default function SpeakersCarousel() {
                   </span>
 
                   {/* Speaker photo */}
-                  <div className="aspect-video w-full rounded-2xl overflow-hidden relative shadow-inner border border-white/5">
+                  <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden relative shadow-inner border border-white/5">
                     <Image
                       src={speaker.image}
                       alt={speaker.name}
@@ -115,7 +115,7 @@ export default function SpeakersCarousel() {
           {/* Mystery placeholder speakers */}
           {placeholderSpeakers.map((speaker) => (
             <SwiperSlide key={speaker.id} className="h-full">
-              <div className="group bg-black/40 hover:bg-black/60 border border-white/10 hover:border-[#286cfd]/50 rounded-3xl p-6 shadow-sm hover:shadow-[0_0_30px_rgba(40,108,253,0.15)] transition-all duration-300 flex flex-col justify-between h-[380px] transform hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm">
+              <div className="group bg-black/40 hover:bg-black/60 border border-white/10 hover:border-[#286cfd]/50 rounded-3xl p-6 shadow-sm hover:shadow-[0_0_30px_rgba(40,108,253,0.15)] transition-all duration-300 flex flex-col justify-between h-[420px] transform hover:-translate-y-2 relative overflow-hidden backdrop-blur-sm">
                 
                 {/* Neon-like top border line always present, brightens on hover */}
                 <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-[#286cfd] to-[#ccff00] opacity-30 group-hover:opacity-100 transition-opacity duration-300"></div>

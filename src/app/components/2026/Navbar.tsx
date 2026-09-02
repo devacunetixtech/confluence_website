@@ -189,7 +189,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
                       <h4 className="text-lg font-black text-white group-hover:text-[#ccff00] transition-colors uppercase tracking-tight">
                         Community Track (Main Event)
                       </h4>
-                      <span className="bg-[#ccff00] text-black text-[9px] font-black px-2 py-0.5 rounded-full uppercase tracking-wider">
+                      <span className="bg-[#ccff00]/20 text-[#ccff00] border border-[#ccff00]/30 text-[8px] font-bold px-1.5 py-0.5 rounded uppercase">
                         Connect
                       </span>
                     </div>

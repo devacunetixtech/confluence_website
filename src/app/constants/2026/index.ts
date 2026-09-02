@@ -28,7 +28,7 @@ export const speakers: Speaker[] = [
       "Co-founder, Blockchain LAUTECH.",
     ],
     image: "/johnadek.jpg",
-    track: "KEYNOTE",
+    track: "ALL TRACKS",
     topic: "Web3 & Emerging Technologies",
     confirmed: true,
   },
@@ -37,7 +37,7 @@ export const speakers: Speaker[] = [
     name: "Thelma OPURUM",
     title: ["Founder, Blockchain Lautech."],
     image: "/thelma.jpg",
-    track: "CREATE TRACK",
+    track: "ALL TRACKS",
     topic: "Design & Creative Innovation",
     confirmed: true,
   },
@@ -46,8 +46,27 @@ export const speakers: Speaker[] = [
     name: "Blessing OLUWABAMIDELE",
     title: ["Co-founder, Blockchain Lautech."],
     image: "/missblessing.jpg",
-    track: "CONNECT TRACK",
+    track: "ALL TRACKS",
     topic: "Community & Ecosystem Growth",
+    confirmed: true,
+  },
+
+  {
+    id: 4,
+    name: "Pawel Barylski",
+    title: ["TBA"],
+    image: "/pawel-barylski.jpg",
+    track: "ALL TRACKS",
+    topic: "TBA",
+    confirmed: true,
+  },
+  {
+    id: 5,
+    name: "Robert Wesker",
+    title: ["TBA"],
+    image: "/robert-wesker.jpg",
+    track: "ALL TRACKS",
+    topic: "TBA",
     confirmed: true,
   },
 
@@ -89,6 +108,7 @@ export interface SponsorLogo {
   src: string;
   alt: string;
   width?: number;
+  height?: number;
   href?: string;
 }
 
@@ -101,9 +121,10 @@ export const sponsorTiers: SponsorTier[] = [
     height: "h-24",
     sponsors: [
       {
-        src: "/Candao2026.png",
+        src: "/candao_full_white.svg",
         alt: "Candao",
-        width: 160,
+        width: 200,
+        height: 80,
         href: "https://candao.io",
       },
     ],
@@ -127,6 +148,7 @@ export const sponsorTiers: SponsorTier[] = [
         src: "/FaucetDrops2026.png",
         alt: "FaucetDrops",
         width: 120,
+        height: 48,
       },
     ],
   },
@@ -138,6 +160,7 @@ export interface PartnerLogo {
   src: string;
   alt: string;
   width?: number;
+  height?: number;
   href?: string;
 }
 
@@ -146,5 +169,6 @@ export const partnerLogos: PartnerLogo[] = [
     src: "/web3ogbomoso2026.png",
     alt: "Web3 Ogbomoso",
     width: 100,
+    height: 40,
   },
 ];
