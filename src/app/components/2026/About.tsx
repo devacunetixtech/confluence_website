@@ -27,7 +27,7 @@ const About = () => {
         
         {/* Left Side: Copy */}
         <div data-aos="fade-right" className='lg:col-span-7 space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed text-justify md:text-left'>
-          <p className="font-bold text-white">
+          <p className="text-white">
             Confluence is an ecosystem and gathering point for students, builders, founders, creatives and technology enthusiasts.
           </p>
           <p>
