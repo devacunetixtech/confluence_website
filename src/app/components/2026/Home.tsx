@@ -67,7 +67,7 @@ const Home = () => {
         }`} />
       </div>
 
-      <div className='flex flex-col justify-center items-center gap-10 md:pt-32 pt-34 max-sm:px-5 px-6 lg:px-20 relative z-10 max-w-7xl mx-auto'>
+      <div className='flex flex-col justify-center items-center gap-10 md:pt-32 pt-26 max-sm:px-5 px-6 lg:px-20 relative z-10 max-w-7xl mx-auto'>
         
         {/* Sub-header badge */}
         <div data-aos="fade-up" className="flex sm:inline-flex items-center justify-center gap-2 bg-white/5 border border-white/10 shadow-sm px-4.5 py-2.5 rounded-3xl sm:rounded-full hover:shadow-md transition-shadow max-w-full">
@@ -172,23 +172,23 @@ const Home = () => {
           </div>
 
           {/* Hero Actions */}
-          <div className='flex flex-row gap-4 items-center justify-center mb-2 w-full max-w-[330px] sm:max-w-none'>
+          <div className='flex flex-row gap-2 sm:gap-4 items-center justify-center mb-2 w-full max-w-full sm:max-w-none px-2 sm:px-0'>
             <a 
               href="#"
               onClick={(e) => {
                 e.preventDefault();
                 setIsRegisterOpen(true);
               }}
-              className="flex items-center justify-center gap-2 bg-[#ccff00] hover:bg-[#b5e000] text-black hover:scale-[1.02] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-blue border border-black"
+              className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#ccff00] hover:bg-[#b5e000] text-black hover:scale-[1.02] px-3.5 sm:px-8 py-3 sm:py-4 rounded-full text-[11px] sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-blue border border-black"
             >
-              Register To Attend <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5" />
+              Register To Attend <ArrowUpRight className="w-3.5 h-3.5 sm:w-5 sm:h-5 flex-shrink-0" />
             </a>
             
             <a 
               href="#schedule" 
-              className="flex items-center justify-center gap-2 bg-[#286cfd] hover:bg-blue-700 text-white hover:scale-[1.02] px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-xs sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-yellow border border-black"
+              className="flex items-center justify-center gap-1.5 sm:gap-2 bg-[#286cfd] hover:bg-blue-700 text-white hover:scale-[1.02] px-3.5 sm:px-8 py-3 sm:py-4 rounded-full text-[11px] sm:text-base font-black uppercase tracking-wider cursor-pointer transition-all whitespace-nowrap neo-shadow-yellow border border-black"
             >
-              Explore Schedule <ArrowDown className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-bounce" />
+              Explore Schedule <ArrowDown className="w-3 h-3 sm:w-4 sm:h-4 animate-bounce flex-shrink-0" />
             </a>
           </div>
         </div>

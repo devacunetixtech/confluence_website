@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Confluence 2.0",
     images: [
       {
-        url: "/con-img (1).jpg",
+        url: "/CONFLUENCEprev.jpg",
         width: 800,
         height: 800,
         alt: "Confluence 2.0 Logo",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Confluence 2.0",
     description:
       "The Largest Student Web3 Conference in Southwestern Nigeria. Powered by Blockchain LAUTECH—a Tier-1 University Blockchain Club in Africa.",
-    images: ["/con-img (1).jpg"],
+    images: ["/CONFLUENCEprev.jpg"],
   },
 };
 
