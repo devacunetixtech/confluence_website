@@ -25,7 +25,7 @@ export const speakers: Speaker[] = [
     name: "John ADEKUNJO",
     title: [
       "Convener, Confluence",
-      "Co-founder, Blockchain LAUTECH.",
+      "Co-founder, Blockchain LAUTECH",
     ],
     image: "/johnadek.jpg",
     track: "ALL TRACKS",
@@ -35,7 +35,10 @@ export const speakers: Speaker[] = [
   {
     id: 2,
     name: "Thelma OPURUM",
-    title: ["Founder, Blockchain Lautech."],
+    title: [
+      "Co-convener, Confluence",
+      "Founder, Blockchain Lautech",
+    ],
     image: "/thelma.jpg",
     track: "ALL TRACKS",
     topic: "Design & Creative Innovation",
@@ -44,7 +47,7 @@ export const speakers: Speaker[] = [
   {
     id: 3,
     name: "Blessing OLUWABAMIDELE",
-    title: ["Co-founder, Blockchain Lautech."],
+    title: ["Co-founder, Blockchain Lautech"],
     image: "/missblessing.jpg",
     track: "ALL TRACKS",
     topic: "Community & Ecosystem Growth",
