@@ -8,7 +8,7 @@ interface Session {
   title: string;
   description: React.ReactNode;
   venue: string;
-  track: 'Kickoff' | 'Human Layer' | 'Founders' | 'Dev Track' | 'Community';
+  track: 'Kickoff' | 'Human Layer' | 'Founders' | 'Developers' | 'Community';
   details?: string[];
   registerUrl?: string;
 }
@@ -90,7 +90,7 @@ const scheduleData: DayData[] = [
         description: 'A chill creative evening blending soft music and deep ambient conversations. A visual departure from conventional tech conferences, blending art gallery aesthetics with an intimate creative studio.',
         venue: 'Closed Door',
         track: 'Human Layer',
-        details: ['Soft music & ambient talks', 'Intimate creative studio vibes'],
+        details: ['Soft music & ambient talks', 'Sip & Paint', 'Intimate creative studio vibes'],
         registerUrl: 'https://www.crenelle.org/register/the-human-layer-unplugged-room-9de3'
       }
     ]
@@ -128,7 +128,7 @@ const scheduleData: DayData[] = [
         title: 'Dev Track: 24-Hour Hackathon Sprint',
         description: '18 HOURS TO BUILD. 6 HOURS TO DEMO. The developer track sprint kicks off Thursday evening, pushing technical builders to create live solutions.',
         venue: 'The Assembly',
-        track: 'Dev Track',
+        track: 'Developers',
         details: ['Hackathon rules and criteria are currently being curated'],
         registerUrl: 'https://www.crenelle.org/register/developers-track-confluence-2-0-f637'
       }
@@ -145,7 +145,7 @@ const scheduleData: DayData[] = [
         title: 'Dev Track Concludes: Hackathon Demos & Pitching',
         description: 'Hackathon teams pitch their product prototypes before judges. (All Day: 18h building + 6h pitching).',
         venue: 'The Assembly',
-        track: 'Dev Track',
+        track: 'Developers',
         details: ['18 Hours of building complete', '6 Hours of presentations and live demos'],
         registerUrl: 'https://www.crenelle.org/register/developers-track-confluence-2-0-f637'
       }
@@ -159,7 +159,7 @@ const scheduleData: DayData[] = [
     sessions: [
       {
         time: 'Full Day',
-        title: 'Community Track: Community Track Culmination',
+        title: 'Community Track: Confluence 2026 Culmination',
         description: 'The grand finale uniting Code, Create, and Connect with keynotes, panels, and ecosystem awards.',
         venue: 'TBA',
         track: 'Community',
@@ -183,7 +183,7 @@ const Schedule = () => {
       case 'Kickoff': return <Users2 className="w-4 h-4" />;
       case 'Human Layer': return <PhoneOff className="w-4 h-4" />;
       case 'Founders': return <Rocket className="w-4 h-4" />;
-      case 'Dev Track': return <Code2 className="w-4 h-4" />;
+      case 'Developers': return <Code2 className="w-4 h-4" />;
       default: return <Calendar className="w-4 h-4" />;
     }
   };
@@ -193,7 +193,7 @@ const Schedule = () => {
       case 'Kickoff': return 'bg-slate-900/50 text-slate-300 border-slate-800';
       case 'Human Layer': return 'bg-yellow-950/40 text-[#facc15] border-yellow-900/50';
       case 'Founders': return 'bg-lime-950/40 text-[#ccff00] border-lime-900/50';
-      case 'Dev Track': return 'bg-blue-950/40 text-[#286cfd] border-blue-900/50';
+      case 'Developers': return 'bg-blue-950/40 text-[#286cfd] border-blue-900/50';
       default: return 'bg-slate-900/50 text-slate-300 border-slate-800';
     }
   };
@@ -305,12 +305,6 @@ const Schedule = () => {
                     {getTrackIcon(session)}
                     {session.track}
                   </span>
-                  
-                  {session.track === 'Founders' && (
-                    <span className="inline-flex items-center gap-1 bg-[#ccff00] text-black text-[9px] font-black tracking-widest px-3 py-1 rounded-full uppercase">
-                      <Sparkles className="w-3 h-3 fill-black" /> FELLOWSHIP
-                    </span>
-                  )}
                 </div>
 
                 <h4 className="text-xl sm:text-2xl font-black text-white uppercase tracking-tight group-hover:text-[#ccff00] transition-colors duration-200">

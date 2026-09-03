@@ -54,7 +54,7 @@ export const speakers: Speaker[] = [
   {
     id: 4,
     name: "Pawel Barylski",
-    title: ["TBA"],
+    title: ["Co-founder, Candao"],
     image: "/pawel-barylski.jpg",
     track: "ALL TRACKS",
     topic: "TBA",
@@ -63,7 +63,7 @@ export const speakers: Speaker[] = [
   {
     id: 5,
     name: "Robert Wesker",
-    title: ["TBA"],
+    title: ["Co-founder, Candao"],
     image: "/robert-wesker.jpg",
     track: "ALL TRACKS",
     topic: "TBA",

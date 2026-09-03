@@ -26,8 +26,8 @@ const About = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Side: Copy */}
-        <div data-aos="fade-right" className='lg:col-span-7 space-y-6 text-slate-300 text-base sm:text-lg leading-relaxed text-justify md:text-left'>
-          <p className="font-bold text-white text-xl">
+        <div data-aos="fade-right" className='lg:col-span-7 space-y-4 text-slate-300 text-base sm:text-lg leading-relaxed text-justify md:text-left'>
+          <p className="font-bold text-white">
             Confluence is an ecosystem and gathering point for students, builders, founders, creatives and technology enthusiasts.
           </p>
           <p>
@@ -38,56 +38,39 @@ const About = () => {
           </p>
         </div>
 
-        {/* Right Side: Three stat cards stacked vertically */}
-        <div data-aos="fade-left" className='lg:col-span-5 flex flex-col gap-6 w-full'>
+        {/* Right Side: Two stat cards */}
+        <div data-aos="fade-left" className='lg:col-span-5 grid grid-cols-2 lg:flex lg:flex-col gap-4 sm:gap-6 lg:gap-12 w-full'>
           
           {/* Stat Card 01 */}
-          <div className="group bg-black/40 border border-white/10 rounded-3xl p-6 sm:p-8 flex items-center gap-6 shadow-2xl transition-all duration-300 transform hover:-translate-y-1 neo-shadow-blue">
-            <div className="p-4 bg-blue-950/40 text-[#286cfd] rounded-2xl group-hover:bg-[#286cfd] group-hover:text-black transition-colors duration-300">
-              <GraduationCap className="w-8 h-8" />
+          <div className="group bg-black/40 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 shadow-2xl transition-all duration-300 transform hover:-translate-y-1 neo-shadow-blue">
+            <div className="p-3 sm:p-4 bg-blue-950/40 text-[#286cfd] rounded-xl sm:rounded-2xl group-hover:bg-[#286cfd] group-hover:text-black transition-colors duration-300 flex-shrink-0">
+              <GraduationCap className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
             <div>
-              <h4 className="text-4xl sm:text-5xl font-black text-white tracking-tight group-hover:text-[#286cfd] transition-colors duration-300">
+              <h4 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight group-hover:text-[#286cfd] transition-colors duration-300">
                 7,500+
               </h4>
-              <p className="text-slate-400 font-bold text-xs uppercase tracking-wider mt-1">
+              <p className="text-slate-400 font-bold text-[10px] sm:text-xs uppercase tracking-wider mt-0.5 sm:mt-1">
                 Students Trained & Mentored
               </p>
             </div>
           </div>
 
           {/* Stat Card 02 */}
-          <div className="group bg-black/40 border border-white/10 rounded-3xl p-6 sm:p-8 flex items-center gap-6 shadow-2xl transition-all duration-300 transform hover:-translate-y-1 neo-shadow-lemon">
-            <div className="p-4 bg-lime-950/40 text-[#ccff00] rounded-2xl group-hover:bg-[#ccff00] group-hover:text-black transition-colors duration-300">
-              <Sparkles className="w-8 h-8" />
+          <div className="group bg-black/40 border border-white/10 rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-6 shadow-2xl transition-all duration-300 transform hover:-translate-y-1 neo-shadow-lemon">
+            <div className="p-3 sm:p-4 bg-lime-950/40 text-[#ccff00] rounded-xl sm:rounded-2xl group-hover:bg-[#ccff00] group-hover:text-black transition-colors duration-300 flex-shrink-0">
+              <Sparkles className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
             <div>
-              <h4 className="text-4xl sm:text-5xl font-black text-white tracking-tight group-hover:text-[#ccff00] transition-colors duration-300">
+              <h4 className="text-2xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight group-hover:text-[#ccff00] transition-colors duration-300">
                 6+
               </h4>
-              <p className="text-slate-400 font-bold text-xs uppercase tracking-wider mt-1">
+              <p className="text-slate-400 font-bold text-[10px] sm:text-xs uppercase tracking-wider mt-0.5 sm:mt-1">
                 Years of Ecosystem Impact
               </p>
             </div>
           </div>
-
-          {/* Stat Card 03 */}
-          <div className="group bg-black/40 border border-white/10 rounded-3xl p-6 sm:p-8 flex items-center gap-6 shadow-2xl transition-all duration-300 transform hover:-translate-y-1 neo-shadow-yellow">
-            <div className="p-4 bg-yellow-950/40 text-[#facc15] rounded-2xl group-hover:bg-[#facc15] group-hover:text-black transition-colors duration-300">
-              <Award className="w-8 h-8" />
-            </div>
-            <div>
-              <h4 className="text-2xl sm:text-3xl font-black text-white tracking-tight group-hover:text-[#facc15] transition-colors duration-300 uppercase">
-                Tier-1 Status
-              </h4>
-              <p className="text-slate-400 font-semibold text-xs sm:text-sm mt-1 leading-relaxed">
-                Recognized as a Tier-1 University Blockchain Club in Africa, leading developer education, hackathons, and open-source contributions since 2020.
-              </p>
-            </div>
-          </div>
-
         </div>
-
       </div>
 
     </section>
