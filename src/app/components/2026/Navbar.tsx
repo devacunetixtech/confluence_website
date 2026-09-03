@@ -274,7 +274,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
                           </h4>
                         </div>
                         <p className="text-slate-400 text-[10px] leading-relaxed">
-                          Novelty sports &amp; games. Football, tennis, and more.
+                          Unplugged room and Create with Purpose (Sip & Paint).
                         </p>
                       </div>
                     </a>
