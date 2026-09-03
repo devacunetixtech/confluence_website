@@ -22,6 +22,25 @@ export const speakers: Speaker[] = [
   // ── Confirmed speakers (shown first in carousel) ──
   {
     id: 1,
+    name: "Pawel Barylski",
+    title: ["Co-founder, Candao"],
+    image: "/pawel-barylski.jpg",
+    track: "ALL TRACKS",
+    topic: "TBA",
+    confirmed: true,
+  },
+  {
+    id: 2,
+    name: "Robert Wesker",
+    title: ["Co-founder, Candao"],
+    image: "/robert-wesker.jpg",
+    track: "ALL TRACKS",
+    topic: "TBA",
+    confirmed: true,
+  },
+    
+  {
+    id: 3,
     name: "John ADEKUNJO",
     title: [
       "Convener, Confluence",
@@ -33,7 +52,7 @@ export const speakers: Speaker[] = [
     confirmed: true,
   },
   {
-    id: 2,
+    id: 4,
     name: "Thelma OPURUM",
     title: [
       "Co-convener, Confluence",
@@ -45,31 +64,12 @@ export const speakers: Speaker[] = [
     confirmed: true,
   },
   {
-    id: 3,
+    id: 5,
     name: "Blessing OLUWABAMIDELE",
     title: ["Co-founder, Blockchain Lautech"],
     image: "/missblessing.jpg",
     track: "ALL TRACKS",
     topic: "Community & Ecosystem Growth",
-    confirmed: true,
-  },
-
-  {
-    id: 4,
-    name: "Pawel Barylski",
-    title: ["Co-founder, Candao"],
-    image: "/pawel-barylski.jpg",
-    track: "ALL TRACKS",
-    topic: "TBA",
-    confirmed: true,
-  },
-  {
-    id: 5,
-    name: "Robert Wesker",
-    title: ["Co-founder, Candao"],
-    image: "/robert-wesker.jpg",
-    track: "ALL TRACKS",
-    topic: "TBA",
     confirmed: true,
   },
 
