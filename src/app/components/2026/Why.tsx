@@ -29,7 +29,7 @@ const Why = () => {
           <p>
             Ogbomoso isn&apos;t just a city—it&apos;s a growing hub of energy, innovation, and youthful talent. As the second largest city in Oyo State, with a population running into the millions, Ogbomoso stands out as a vibrant urban center on the rise.
           </p>
-          <p className="font-bold text-white">
+          <p className="text-white">
             By bringing Blockchain and Web3 innovation here, Blockchain Club LAUTECH is planting seeds of opportunity, empowering a new generation of builders, and showing that global technology can take root in local communities.
           </p>
         </div>

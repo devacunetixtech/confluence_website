@@ -43,7 +43,7 @@ export default function Navbar({ isRegisterOpen: propsRegisterOpen, setIsRegiste
       )}
 
       {/* Floating Navbar Container */}
-      <div className="bg-black/80 backdrop-blur-md max-w-[1200px] mx-auto rounded-full shadow-2xl border border-white/10 fixed top-4 sm:top-6 left-1/2 transform -translate-x-1/2 w-[92%] transition-all duration-300 z-50">
+      <div className="bg-black/80 backdrop-blur-md max-w-[1200px] rounded-full shadow-2xl border border-white/10 fixed top-4 sm:top-6 lg:top-6 left-1/2 transform -translate-x-1/2 w-[92%] transition-all duration-300 z-50">
         <nav className="px-6 py-3.5">
           <div className="flex items-center justify-between mx-auto gap-4">
             
