@@ -1,28 +1,11 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
-import { MapPin, Calendar } from 'lucide-react'
+import React from 'react'
 import Navbar from './Navbar'
-import CircularGallery from './CircularGallery'
+import PhotoGalleryPreview from './PhotoGalleryPreview'
 import CountdownTimer from './CountdownTimer'
 
 const Home = () => {
-  const [bend, setBend] = useState(3)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 640) {
-        setBend(0.5) // smaller bend on small screens
-      } else {
-        setBend(3) // default bend on larger screens
-      }
-    }
-
-    handleResize() // run on mount
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
   return (
     <section id='home'>
       <div>
@@ -75,20 +58,11 @@ const Home = () => {
           </div>
         </div>
 
-        <div style={{ height: '600px', position: 'relative' }} className='-mt-25 max-sm:-mt-20' data-aos="fade-up" data-aos-delay="1300">
-          <CircularGallery 
-            bend={bend} 
-            textColor="#000" 
-            borderRadius={0.05} 
-            scrollEase={0.02} 
-            autoScrollSpeed={0.09}
-          />
-        </div>
-
+        {/* Photo Gallery Preview Section (matching blockchainlautech.club screenshot) */}
+        <PhotoGalleryPreview />
 
         <CountdownTimer />
       </div>
-
     </section>
   )
 }

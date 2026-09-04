@@ -110,6 +110,16 @@ export default function Navbar() {
               </li>
               <li>
                 <a
+                  href="/2025/gallery"
+                  onClick={() => setIsOpen(false)}
+                  className="block py-2 px-3 text-gray-900 rounded-sm max-sm:hover:bg-gray-100
+                  md:hover:text-blue-700 md:p-0"
+                >
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a
                   href="#details"
                   onClick={() => setIsOpen(false)}
                   className="block py-2 px-3 text-gray-900 rounded-sm max-sm:hover:bg-gray-100
