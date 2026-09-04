@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   description:
     "The Largest Student Web3 Conference in Southwestern Nigeria. Powered by Blockchain LAUTECH—a Tier-1 University Blockchain Club in Africa.",
   icons: {
-    icon: "/con-img (1).jpg",
+    icon: "/logo.jpg",
+    shortcut: "/logo.jpg",
+    apple: "/logo.jpg",
   },
   openGraph: {
     title: "Confluence 2.0",
