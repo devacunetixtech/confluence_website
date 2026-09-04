@@ -64,21 +64,17 @@ const Archive = () => {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <a 
-                  href="https://blockchainlautech.pixieset.com/confluence25/" 
-                  target="_blank" 
-                  rel="noreferrer" 
+                  href="/2025#gallery" 
                   className="flex items-center justify-center gap-2 bg-[#ccff00] hover:bg-[#b5e000] text-black py-3 px-4 rounded-xl transition-all font-black text-xs uppercase tracking-wider border border-black neo-shadow-blue"
                 >
-                  <Film className="w-4 h-4 text-[#286cfd]" /> Community Track
+                  <Film className="w-4 h-4 text-[#286cfd]" /> View Photo Gallery
                 </a>
                 
                 <a 
-                  href="https://drive.google.com/drive/folders/1ZjO7oUuP6nRRcm1PHGrz6rgKRPvjlh57" 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="flex items-center justify-center gap-2 border border-white/10 hover:border-white/20 hover:bg-white/5 text-slate-350 py-3 px-4 rounded-xl transition-all font-bold text-xs uppercase tracking-wider"
+                  href="/2025" 
+                  className="flex items-center justify-center gap-2 border border-white/10 hover:border-white/20 hover:bg-white/5 text-slate-300 py-3 px-4 rounded-xl transition-all font-bold text-xs uppercase tracking-wider"
                 >
-                  <Award className="w-4 h-4" /> Developer Track
+                  <Award className="w-4 h-4" /> Explore 1.0 Site
                 </a>
               </div>
             </div>

@@ -601,7 +601,7 @@ class App {
   }
 
   update() {
-    // If the app isn't running, exit — RAF will be controlled by setVisibility
+    // If the app isn't running, exit - RAF will be controlled by setVisibility
     if (!this.running) return;
 
     this.scroll.target += this.autoScrollSpeed;
